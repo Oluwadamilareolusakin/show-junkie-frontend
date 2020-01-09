@@ -5,9 +5,9 @@ Twitter for movies
 It is the Frontend for Movie Junkie, a web app that allows users browse their favourite TV Shows, share comments about shows, rate shows and follow people who they share similar interests with. 
 
 ## Built With
-- Ruby on Rails
-- Devise
-- Heroku
+- React JS
+- ES6
+- Webpack
 - [TVMaze API](https://www.tvmaze.com/api)
 #### and deployed to Heroku
 
@@ -20,8 +20,8 @@ It is the Frontend for Movie Junkie, a web app that allows users browse their fa
 To get a local copy up and running follow these simple example steps.
 - Clone the project unto your local machine
 - `cd` into the project directory
-- Run `rails db:setup` and `rails db:migrate`
-- Run your local rails server with `rails s`
+- Run `npm i`
+- Run `npm start`
 - Open up `localhost:3000` in your browser to view the project
 
 ## 🤝 Contributing
