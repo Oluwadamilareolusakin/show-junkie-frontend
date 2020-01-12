@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Login from '../forms/Login';
+import Login from '../../containers/forms/Login';
+import '../../stylesheets/forms/login.scss';
 
 const LoginPage = (props) => {
-  const { loginButton } = props;
   
   return (
-    <>
+    <div className="column">
       <Login />
-      <Link to="/signup">
-        <button>Sign Up</button>
-      </Link>
-    </>
+    </div>
   );
 };
 
