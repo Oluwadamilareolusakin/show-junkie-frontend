@@ -1,0 +1,21 @@
+@import '../components';
+@import './episode';
+@import './show_body';
+@import './show_card';
+@import './show_header';
+
+div.shows {
+  padding: 5em 0;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.show-list-header {
+  justify-content: space-between;
+  padding: 0 1em;
+
+  select {
+    border-radius: 5px;
+    border: none;
+  }
+}
