@@ -1,0 +1,22 @@
+
+.navbar {
+  background-color: $primary-purple;
+  padding: 2em;
+  margin-bottom: 2em;
+  width: 100%;
+  position: fixed;
+  justify-content: space-between;
+
+  .nav-left {
+    color: white;
+  }
+
+  .nav-right {
+    a{
+      color: white;
+      text-decoration: none;
+      margin-right: 1em;
+    }
+  }
+
+}
