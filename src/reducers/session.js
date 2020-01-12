@@ -9,8 +9,13 @@ const sessionReducer = (state = {loggedIn: false}, action) => {
     }
 
     case LOGIN: {
-      return Object.assign({}, state, {loggedIn:true, current_user: action.user});
+      return Object.assign({}, state, {loggedIn: action.loggedIn, current_user: action.user});
     }
+
+    case SIGN_UP: {
+      return Object.assign({},state, {loggedIn: action.loggedIn, current_user: action.user })
+    }
+      
 
     default:
       return state;
