@@ -1,0 +1,62 @@
+.show-card {
+  width: 25%;
+  padding: 0 1em;
+  margin: 1em 0;
+
+  .show-image {
+    width: 100%;
+  
+    img {
+      height: 400px;
+      width: 100%;
+    }
+  }
+
+  .blank-image {
+    height: 400px;
+    background-image: linear-gradient(rgb(0, 202, 221), rgb(0, 183, 255), rgb(0, 140, 255));
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .show-details {
+    .row {
+      align-items: center;
+      font-size: .9em;
+    }
+
+    .name-rating{
+      align-items: center;
+      justify-content: space-between;
+      .poor-rating{
+        color: rgb(255, 52, 52);
+      }
+
+      .good-rating{
+        margin-left: .5em;
+        color: $accent-green;
+      }
+    }
+
+    .genres {
+      margin: .4em 0;
+      align-items: center;
+
+      .runtime, .genre {
+        border-radius: 5px;
+        margin-right: .3em;
+        padding: .3em;
+        color: white;
+      }
+      
+      .runtime {
+        background-color: $primary-pink;
+      }
+      .genre {
+        background-color: $accent-purple;
+      }
+    }
+  }
+}
+
