@@ -2,19 +2,19 @@ const SIGN_UP = "SIGN_UP";
 const LOGIN = "LOGIN";
 const LOGOUT = "LOGOUT";
 
-export const signUp = ({ email, name, password }) => {
+export const signUp = (email, userName, password, id ) => {
   return {
     type: SIGN_UP,
     id,
-    name,
+    userName,
   };
 };
 
-export const login = ({email, password}) => {
+export const login = (email, password, id, userName) => {
   return {
     type: LOGIN,
     id,
-    name
+    userName
   };
 };
 
