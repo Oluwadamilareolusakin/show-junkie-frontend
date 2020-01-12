@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes, { oneOfType } from 'prop-types';
 
-const ShowHeader = () => {
+const ShowHeader = (props) => {
   const { show } = props;
   const { name, image, genres, runtime, premiered, 
           status, rating, language, network, 
@@ -10,11 +10,12 @@ const ShowHeader = () => {
   const { average } = rating;
   const { id, networkName, country } = network
   const { code } = country;
+  const { original } = image;
   
   return (
     <div className="show-header row">
       <div className="show-left">
-        <img src={image}/>
+        <img src={original}/>
       </div>
       <div className="show-right">
           <h2 className="show-name">{name} </h2>
