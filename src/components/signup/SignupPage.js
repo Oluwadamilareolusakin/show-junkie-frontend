@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Signup from '../forms/Signup';
+import Signup from '../../containers/forms/Signup';
+import '../../stylesheets/forms/login.scss';
 
-const SignupPage = (props) => {
+const SignupPage = () => {
   
   return (
-    <>
+    <div className="column">
       <Signup />
-      <Link to="/login">
-        <button>Login</button>
-      </Link>
-    </>
+    </div>
   );
 };
 
