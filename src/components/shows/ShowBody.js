@@ -1,28 +1,18 @@
 import React from 'react';
-import PropTypes, { oneOfType } from 'prop-types';
+import { Link } from 'react-router-dom';
+import '../../stylesheets/show/show_body.scss';
 
-// http://api.tvmaze.com/shows/1/episodes
-
-const ShowBody = (props) => {
-  const { show, getEpisodes } = props;
-  const {summary, id} = show;
-
+const ShowBody = () => {
   return (
-    <div className="show-body">
-      <p>{summary}</p>
+    <div className="show-body row">
+      <Link to="/episodes" className="card column">
+        Episodes
+      </Link>
+      <Link to="/seasons" className="card column">
+        Seasons
+      </Link>
     </div>
   )
-}
-
-
-ShowBody.defaultProps = {
-  show: {},
-  getEpisodes: () => {},
-}
-
-ShowBody.propTypes = {
-  show: PropTypes.arrayOf(oneOfType(['strings'])),
-  getEpisodes: PropTypes.func,
 }
 
 export default ShowBody;

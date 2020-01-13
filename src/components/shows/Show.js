@@ -11,7 +11,6 @@ class Show extends React.Component {
   
   render() {
     const { show, fetchedShow } = this.props;
-    console.log(show, fetchedShow)
     return (
       fetchedShow && <Fragment>
         <ShowHeader show={show}/>
@@ -24,12 +23,15 @@ class Show extends React.Component {
 Show.defaultProps = {
   show: {},
   fetchedShow: false,
+  fetchShow: () => {},
+  showId: 1,
 }
 
 Show.propTypes = {
   show: PropTypes.arrayOf(oneOfType(Object)),
   fetchedShow: PropTypes.bool,
-
+  fetchShow: PropTypes.func,
+  showId: PropTypes.number,
 }
 
 export default Show;
