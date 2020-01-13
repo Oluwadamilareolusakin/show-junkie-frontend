@@ -1,3 +1,5 @@
+@import '../components';
+
 .show-card {
   width: 25%;
   padding: 0 1em;
@@ -14,7 +16,7 @@
 
   .blank-image {
     height: 400px;
-    background-image: linear-gradient(rgb(0, 202, 221), rgb(0, 183, 255), rgb(0, 140, 255));
+    background-image: $accent-gradient-blue;
     justify-content: center;
     align-items: center;
     color: white;
@@ -23,12 +25,18 @@
   .show-details {
     .row {
       align-items: center;
-      font-size: .9em;
+      font-size: .7em;
     }
 
     .name-rating{
       align-items: center;
       justify-content: space-between;
+
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      
       .poor-rating{
         color: rgb(255, 52, 52);
       }
