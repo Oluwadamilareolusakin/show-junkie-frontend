@@ -1,11 +1,12 @@
 @import './components';
-@import './navigations/navbar';
-
+@import './fontawesome/scss/fontawesome.scss';
+@import './fontawesome/scss/solid.scss';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $primary-font;
 }
 
 ::-webkit-scrollbar {
@@ -26,4 +27,24 @@
 .column {
   display: flex;
   flex-flow: column nowrap;
+}
+
+.filter {
+  select {
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.modal {
+  .close {
+    @extend %fa-icon;
+    @extend .fas;
+    cursor: pointer;
+
+
+    &:before {
+      content: fa-content($fa-var-times);
+    }
+  }
 }
