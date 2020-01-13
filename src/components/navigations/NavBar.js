@@ -1,12 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../../stylesheets/navigations/navbar.scss';
 
 const NavBar = (props) => {
+  const { openModal } = props;
+  const handleModal = (event, modal) => {
+    event.preventDefault();
+    openModal(modal);
+  }
+  const helpModal = () => document.querySelector('.help-modal');
+  const feedbackModal = () => document.querySelector('.feedback-modal');
+  
   return (
     <nav className="navbar row">
       <div className="nav-left">
-        <h3>Show Junkie</h3>
+        <Link to="/">
+          <h3>Show Junkie</h3>
+        </Link>
       </div>
       <div className="nav-right row">
         <div>
@@ -19,10 +30,10 @@ const NavBar = (props) => {
           <Link to="/profile" className="navbar-link">Profile</Link>
         </div>
         <div>
-          <Link to="/help" className="navbar-link">Help</Link>
+          <Link className="navbar-link" onClick={(event) => handleModal(event,helpModal())}>Help</Link>
         </div>
         <div>
-          <Link to="/feedback" className="navbar-link">Feedback</Link>
+          <Link className="navbar-link" onClick={(event) => handleModal(event,feedbackModal())} >Feedback</Link>
         </div>
         <div>
           <Link to="/logout" className="navbar-link">Logout</Link>

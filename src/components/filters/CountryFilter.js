@@ -13,7 +13,7 @@ const CountryFilter = (props) => {
   };
   
   return (
-    <select className="category-filter" value={currentCountry} onChange={(event) => handleChange(event)}>
+    <select className="category-filter filter" value={currentCountry} onChange={(event) => handleChange(event)}>
       {countries.map(country => <option value={country.code}>{country.name}</option>)}
     </select>
   );
