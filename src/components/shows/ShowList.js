@@ -4,9 +4,6 @@ import ShowCard from '../../containers/shows/ShowCard';
 import '../../stylesheets/show/show.scss';
 
 class ShowList extends React.Component {
-  constructor(props){
-    super(props);
-  }
   
   componentDidMount() {
     const { country, date, fetchShows } = this.props;
