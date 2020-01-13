@@ -1,0 +1,43 @@
+@import '../components';
+
+.season {
+  width: 23%;
+  margin-right: .5em;
+
+  .season-image {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 400px;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    transition: .5s;
+
+    &:hover {
+      color: $link-hover-grey;
+    }
+  }
+
+  .season-number {
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  .blank-image {
+    height: 400px;
+    width: 100%;
+    background-image: $primary-gradient-grey;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .season-right {
+  }
+}

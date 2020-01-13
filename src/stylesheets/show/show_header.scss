@@ -1,0 +1,74 @@
+@import '../components';
+
+.show-header {
+
+  .show-left {
+    img{
+      height: 700px;
+    }
+  }
+
+  .show-right {
+    background-image: $primary-gradient-grey;
+    width: 80%;
+    height: 700px;
+    padding: 2em;
+    color: white;
+    justify-content: center;
+
+    .show-name {
+      font-weight: $aux-font-weight;
+      font-size: 3em;
+    }
+
+    .show-existence {
+      align-items: center;
+    }
+
+    .premiered {
+      background-color: $accent-orange;
+      color: black;
+      border-radius: 5px;
+      width: 30%;
+      padding: .5em;
+      margin: 1em 0;
+    }
+
+    .good {
+       color: $accent-green; 
+    }
+
+    .poor {
+      color: $accent-orange;
+    }
+
+    .show-status {
+      margin: .5em .5em;
+    }
+
+    .show-rating, .show-premier-date {
+      margin: .5em 0;
+    }
+  }
+
+  .show-time {
+    margin: .5em 0; 
+  }
+
+  .extra-detail {
+    margin-right: 1em;
+  }
+  
+  .summary {
+    margin: 2em 0;
+      h2 {
+        font-size: 2.5em;
+        color: $accent-green;
+        margin-bottom: .6em;
+      }
+    
+      p{
+        font-size: .9em;
+      }
+  }
+}

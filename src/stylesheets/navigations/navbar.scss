@@ -1,0 +1,32 @@
+@import '../components';
+
+.navbar {
+  background-color: $primary-purple;
+  padding: 2em;
+    width: 100%;
+  justify-content: space-between;
+
+  .nav-left {
+    color: white;
+
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .nav-right {
+    a{
+      color: white;
+      text-decoration: none;
+      margin-right: 1em;
+
+      transition: .5s;
+    
+    &:hover {
+      color: $link-hover-grey; 
+    }
+    }
+  }
+
+}
