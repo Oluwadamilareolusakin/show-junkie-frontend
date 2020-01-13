@@ -10,8 +10,18 @@ $aux-font-weight: 700;
 //Colors
 $primary-purple: #59499e;
 $accent-purple: #8589ef;
+$accent-purple-transparent: #8588efc4;
 $primary-blue: #35bee0;
 $primary-green: #5cba47;
 $accent-green: #18cebb;
 $accent-orange: #ffc611;
 $primary-pink: #ff6ea1;
+$primary-gradient-grey: linear-gradient(rgb(29, 29, 29), rgb(20, 20, 20), black);
+$secondary-gradient-grey: linear-gradient(rgb(0, 0, 0), rgb(20, 20, 20), black);
+$accent-gradient-blue: linear-gradient(rgb(0, 202, 221), rgb(0, 183, 255), rgb(0, 140, 255));
+$link-hover-grey: grey;
+
+
+
+//Box Shadow
+$material-box-shadow: 0 0 5px .5px rgba(0, 0, 0, 0.353);
