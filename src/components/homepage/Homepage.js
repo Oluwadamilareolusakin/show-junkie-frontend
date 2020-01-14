@@ -13,8 +13,8 @@ class Homepage extends React.Component {
         <ShowList />
       </div>
     );
-  };
-};
+  }
+}
 
 
 

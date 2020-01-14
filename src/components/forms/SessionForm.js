@@ -19,7 +19,7 @@ const SessionForm = (props) => {
       handleSubmit(email, name, password);
     } else {
       handleSubmit(email, password);
-    };
+    }
   };
 
   return (

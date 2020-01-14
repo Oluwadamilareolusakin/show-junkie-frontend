@@ -32,11 +32,11 @@ const ShowCard = (props) => {
 };
 
 ShowCard.defaultProps = {
-  show: {},
+  data: {},
 };
 
 ShowCard.propTypes = {
-  show: PropTypes.arrayOf(oneOfType(['strings'])),
+  data: PropTypes.arrayOf(oneOfType(['strings'])),
 };
 
 export default ShowCard;

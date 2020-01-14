@@ -19,7 +19,7 @@ const sessionReducer = (state = {loggedIn: false}, action) => {
 
     default:
       return state;
-  };
+  }
 };
 
 export default sessionReducer;

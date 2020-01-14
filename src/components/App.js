@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import SideBar from './navigations/Sidebar';
 import NavBar from './navigations/NavBar';
 import SignupPage from './signup/SignupPage';
-import Help from './modals/Help';
+import Help from '../containers/modals/Help';
 import Feedback from './modals/Feedback';
 import Show from '../containers/shows/Show';
 import LoginPage from './login/LoginPage';
@@ -22,7 +22,7 @@ const App = (props) => {
   const closeModal = (modal) => {
     if (modal.classList.contains('open')){
       modal.classList.toggle('open');
-    };
+    }
   };
 
   return (

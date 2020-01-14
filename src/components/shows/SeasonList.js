@@ -17,8 +17,8 @@ class SeasonList extends React.Component {
         {fetchedSeasons && seasons.map(season => <Season season={season}/>)}
       </div>
     )
-  };
-};
+  }
+}
 
 
 SeasonList.defaultProps = {

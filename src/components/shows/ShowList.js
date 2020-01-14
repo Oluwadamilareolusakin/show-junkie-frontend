@@ -18,7 +18,7 @@ class ShowList extends React.Component {
       </div>
     );
   }
-};
+}
 
 ShowList.defaultProps = {
   shows: {},

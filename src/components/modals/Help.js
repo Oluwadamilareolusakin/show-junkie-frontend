@@ -6,8 +6,7 @@ class Help extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: null,
-      question: null,
+      message: null,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,12 +21,15 @@ class Help extends React.Component {
     }
 
     this.setState({
-      question: e.target.value,
+      message: e.target.value,
     })
   }
 
-  handleSubmit() {
-
+  handleSubmit(event) {
+    event.preventDefault();
+    const { message } = this.state;
+    const { submitEnquiry } = this.props;
+    submitEnquiry(message);
   }
 
   modal = () => document.querySelector('.help-modal');
@@ -38,13 +40,22 @@ class Help extends React.Component {
       <div className="help-modal modal column">
         <div className="close" onClick={() => closeModal(this.modal())}></div>
         <form className="column">
-          <input type="text" onChange={this.handleChange} placeholder="Email Address"/>
           <textarea type="text" rows="12" onChange={this.handleChange} placeholder="Ask us anything...."/>
-          <button type="buttons" onClick={this.handleSubmit}>SEND</button>
+          <button type="buttons" onClick={(event) => this.handleSubmit(event)}>SEND</button>
         </form>
       </div>
     );
   }
 };
+
+Help.defaultProps = {
+  created: false,
+  submitEnquiry: () => {},
+}
+
+Help.propTypes = {
+  created: PropTypes.bool,
+  submitEnquiry: PropTypes.func,
+}
 
 export default Help;

@@ -16,7 +16,7 @@ const filterReducer = (state = {currentCountry: "US", currentDate: date}, action
       return Object.assign({}, state, {currentCountry: action.country});
     default:
       return state;
-  };
+  }
 };
 
 export default filterReducer;

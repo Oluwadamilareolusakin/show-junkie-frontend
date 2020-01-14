@@ -30,7 +30,7 @@ const showReducer = (state = {}, action) => {
 
     default:
       return state;
-  };
+  }
 };
 
 export default showReducer;

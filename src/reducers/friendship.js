@@ -10,7 +10,7 @@ const friendshipReducer = (state = [], action) => {
       return;
     default:
       return false
-  };
+  }
 };
 
 export default friendshipReducer;

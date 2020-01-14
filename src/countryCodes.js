@@ -248,4 +248,4 @@ export default function countryCodes(){
       { name: 'Zimbabwe', code: 'ZW' }
     ]
   );
-};
+}

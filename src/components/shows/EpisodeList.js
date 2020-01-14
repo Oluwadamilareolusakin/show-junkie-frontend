@@ -17,8 +17,8 @@ class EpisodeList extends React.Component {
         {fetchedEpisodes && episodes.map(episode => <Episode episode={episode}/>)}
       </div>
     )
-  };
-};
+  }
+}
 
 
 EpisodeList.defaultProps = {
