@@ -21,7 +21,7 @@ export const createEnquiry = (message, user_id = 1) => {
     try {
       const form = new FormData();
       form.set('message', message);
-      const postRequest = await Axios.post(`${API_BASE_URL}/users/${user_id}enquiries`, form);
+      const postRequest = await Axios.post(`${API_BASE_URL}/users/${user_id}/enquiries`, form);
       postRequest.then(dispatch(createdEnquiry()) )
     } catch(error) {
       console.log(error);
