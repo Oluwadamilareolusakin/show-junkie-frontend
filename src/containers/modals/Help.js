@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import Help from '../../components/modals/Help';
 import { createEnquiry } from '../../actions/enquiries';
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   submitEnquiry: (enquiry, user_id = 1) => dispatch(createEnquiry(enquiry, user_id)),
 });
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   created: state.sharedReducer.created,
 });
 

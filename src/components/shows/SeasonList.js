@@ -14,7 +14,7 @@ class SeasonList extends React.Component {
 
     return (
       <div className="seasons row">
-        {fetchedSeasons && seasons.map((season) => <Season key={season.id} season={season} />)}
+        {fetchedSeasons && seasons.map(season => <Season key={season.id} season={season} />)}
       </div>
     );
   }

@@ -17,7 +17,7 @@ export const createSuggestion = (message, userId = 1) => async (dispatch) => {
   }
 };
 
-const recieveSuggestions = (suggestions) => ({
+const recieveSuggestions = suggestions => ({
   type: RECIEVE_SUGGESTIONS,
   suggestions,
 });

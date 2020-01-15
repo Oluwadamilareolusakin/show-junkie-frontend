@@ -17,7 +17,7 @@ export const createEnquiry = (message, userId = 1) => async (dispatch) => {
   }
 };
 
-const recieveEnquiries = (enquiries) => ({
+const recieveEnquiries = enquiries => ({
   type: RECIEVE_ENQUIRIES,
   enquiries,
 });

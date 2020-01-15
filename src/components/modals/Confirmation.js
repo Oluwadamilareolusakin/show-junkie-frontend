@@ -12,7 +12,7 @@ Your
         {' '}
 was successully sent
       </h2>
-      <button type="button" onClick={(event) => handleClick(event)}>Ok!</button>
+      <button type="button" onClick={event => handleClick(event)}>Ok!</button>
     </div>
   );
 };
