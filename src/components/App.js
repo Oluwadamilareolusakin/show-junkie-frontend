@@ -47,11 +47,11 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   loggedIn: state.sessionReducer.loggedIn,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   resetCreated: () => dispatch(resetCreated()),
 });
 
