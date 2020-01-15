@@ -1,8 +1,6 @@
-const UPDATE = "UPDATE";
+const UPDATE = 'UPDATE';
 
-export const updateCurrentCountry = (country) => {
-  return {
-    type: UPDATE,
-    country,
-  };
-};
+export const updateCurrentCountry = (country) => ({
+  type: UPDATE,
+  country,
+});

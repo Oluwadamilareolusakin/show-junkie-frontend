@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import '../../stylesheets/sessions/sessions.scss';
 
 const SessionForm = (props) => {
-  const { handleSubmit, signUp, buttonName, 
-          formName, actionPath, actionButtonName
-        } = props;
+  const {
+    handleSubmit, signUp, buttonName,
+    formName, actionPath, actionButtonName,
+  } = props;
 
   const submitForm = () => {
     let name = document.querySelector('#name');
@@ -37,17 +38,17 @@ const SessionForm = (props) => {
         </Link>
       </form>
     </div>
-  )
-}
+  );
+};
 
 SessionForm.defaultProps = {
   handleSubmit: () => {},
   signUp: false,
-  buttonName: "Login",
-  actionButtonName: "Sign up",
-  actionPath: "/signup",
-  formName: "Login",
-}
+  buttonName: 'Login',
+  actionButtonName: 'Sign up',
+  actionPath: '/signup',
+  formName: 'Login',
+};
 
 SessionForm.propTypes = {
   handleSubmit: PropTypes.func,
@@ -56,6 +57,6 @@ SessionForm.propTypes = {
   actionButtonName: PropTypes.string,
   actionPath: PropTypes.string,
   formName: PropTypes.string,
-}
+};
 
 export default SessionForm;

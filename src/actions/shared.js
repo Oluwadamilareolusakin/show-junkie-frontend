@@ -1,14 +1,10 @@
-const RESET_CREATED = "RESET_CREATED";
-const CREATE = "CREATE";
+const RESET_CREATED = 'RESET_CREATED';
+const CREATE = 'CREATE';
 
-export const resetCreated = () => {
-  return {
-    type: RESET_CREATED,
-  };
-};
+export const resetCreated = () => ({
+  type: RESET_CREATED,
+});
 
-export const create = () => {
-  return {
-    type: CREATE,
-  };
-};
+export const create = () => ({
+  type: CREATE,
+});

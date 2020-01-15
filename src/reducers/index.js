@@ -13,6 +13,6 @@ const rootReducer = combineReducers({
   enquiriesReducer,
   suggestionsReducer,
   sharedReducer,
-}); 
+});
 
 export default rootReducer;

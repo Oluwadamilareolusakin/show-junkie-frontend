@@ -5,16 +5,16 @@ import SessionForm from '../forms/SessionForm';
 const LoginForm = (props) => {
   const { handleSubmit } = props;
   return (
-    <SessionForm handleSubmit={handleSubmit}/>
-  )
-}
+    <SessionForm handleSubmit={handleSubmit} />
+  );
+};
 
 LoginForm.defaultProps = {
   handleSubmit: () => {},
-}
+};
 
 LoginForm.propTypes = {
   handleSubmit: PropTypes.func,
-}
+};
 
 export default LoginForm;

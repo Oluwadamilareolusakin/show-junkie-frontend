@@ -20,10 +20,9 @@ const Season = (props) => {
   const { number, url, image } = season;
 
 
-  
   return (
     <div className="season">
-      {image ? <img className="season-image" src={image && image.original } /> : <div className="blank-image column">Boy</div>}
+      {image ? <img className="season-image" src={image && image.original} /> : <div className="blank-image column">Boy</div>}
       <div className="season-right column">
         <p className="season-number">
           <a href={url} target="_blank" rel="noopener noreferrer">
@@ -39,12 +38,12 @@ Season.defaultProps = {
   number: null,
   endDate: null,
   season: {},
-}
+};
 
 Season.propTypes = {
   number: PropTypes.number,
   season: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
   endDate: PropTypes.number,
-}
+};
 
 export default Season;

@@ -8,15 +8,13 @@ import './stylesheets/index.scss';
 import App from './components/App';
 
 const store = createStore(rootReducer, applyMiddleware(
-  thunk
+  thunk,
 ));
 
-const AppWrapper = () => {
-  return (
-    <Provider  store={store}>
-      <App />
-    </Provider>
-  )
-};
+const AppWrapper = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
 ReactDOM.render(<AppWrapper />, document.querySelector('#root'));

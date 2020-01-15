@@ -9,14 +9,14 @@ class EpisodeList extends React.Component {
     fetchEpisodes(showId);
   }
 
-  render(){
+  render() {
     const { episodes, fetchedEpisodes } = this.props;
 
     return (
       <div className="episodes row">
-        {fetchedEpisodes && episodes.map(episode => <Episode key={episode.id} episode={episode}/>)}
+        {fetchedEpisodes && episodes.map((episode) => <Episode key={episode.id} episode={episode} />)}
       </div>
-    )
+    );
   }
 }
 
@@ -26,13 +26,13 @@ EpisodeList.defaultProps = {
   fetchEpisodes: () => {},
   fetchedEpisodes: false,
   episodes: {},
-}
+};
 
 EpisodeList.propTypes = {
   showId: PropTypes.number,
   episodes: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
   fetchEpisodes: PropTypes.func,
   fetchedEpisodes: PropTypes.bool,
-}
+};
 
 export default EpisodeList;

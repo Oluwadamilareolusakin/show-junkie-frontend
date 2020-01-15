@@ -3,7 +3,7 @@ import CountryFilter from '../../containers/filters/CountryFilter';
 import ShowList from '../../containers/shows/ShowList';
 
 class Homepage extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         <div className="show-list-header row">
@@ -15,7 +15,6 @@ class Homepage extends React.Component {
     );
   }
 }
-
 
 
 export default Homepage;

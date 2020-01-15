@@ -1,15 +1,15 @@
-const RECIEVE_SUGGESTION = "RECIEVE_SUGGESTION";
+const RECIEVE_SUGGESTION = 'RECIEVE_SUGGESTION';
 
 const suggestionsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECIEVE_SUGGESTION: {
-      return Object.assign({}, state, {suggestions: [...state, ...action.suggestions]})
+      return { ...state, suggestions: [...state, ...action.suggestions] };
     }
 
-    default:{
+    default: {
       return state;
     }
   }
-}
+};
 
 export default suggestionsReducer;

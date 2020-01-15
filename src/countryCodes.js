@@ -1,4 +1,4 @@
-export default function countryCodes(){
+export default function countryCodes() {
   return (
     [
       { name: 'Afghanistan', code: 'AF' },
@@ -245,7 +245,7 @@ export default function countryCodes(){
       { name: 'Western Sahara', code: 'EH' },
       { name: 'Yemen', code: 'YE' },
       { name: 'Zambia', code: 'ZM' },
-      { name: 'Zimbabwe', code: 'ZW' }
+      { name: 'Zimbabwe', code: 'ZW' },
     ]
   );
 }

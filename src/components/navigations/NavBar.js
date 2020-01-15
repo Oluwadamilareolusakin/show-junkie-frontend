@@ -8,10 +8,10 @@ const NavBar = (props) => {
   const handleModal = (event, modal) => {
     event.preventDefault();
     openModal(modal);
-  }
+  };
   const helpModal = () => document.querySelector('.help-modal');
   const feedbackModal = () => document.querySelector('.feedback-modal');
-  
+
   return (
     <nav className="navbar row">
       <div className="nav-left">
@@ -30,10 +30,10 @@ const NavBar = (props) => {
           <Link to="/profile" className="navbar-link">Profile</Link>
         </div>
         <div>
-          <Link className="navbar-link" onClick={(event) => handleModal(event,helpModal())}>Help</Link>
+          <Link className="navbar-link" onClick={(event) => handleModal(event, helpModal())}>Help</Link>
         </div>
         <div>
-          <Link className="navbar-link" onClick={(event) => handleModal(event,feedbackModal())} >Feedback</Link>
+          <Link className="navbar-link" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</Link>
         </div>
         <div>
           <Link to="/logout" className="navbar-link">Logout</Link>
@@ -41,15 +41,15 @@ const NavBar = (props) => {
       </div>
     </nav>
   );
-}
+};
 
 NavBar.defaultProps = {
   openModal: false,
-}
+};
 
 NavBar.propTypes = {
   openModal: PropTypes.func,
-}
+};
 
 
 export default NavBar;
