@@ -13,7 +13,7 @@ class Feedback extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleOk = this.handleOk.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.modal = document.querySelector('.feedback-modal');
+    this.modal = () => document.querySelector('.feedback-modal');
   }
 
   handleChange(e) {
@@ -27,7 +27,7 @@ class Feedback extends React.Component {
   handleOk(e) {
     const { closeModal, resetCreated } = this.props;
     e.preventDefault();
-    closeModal(this.modal);
+    closeModal(this.modal());
     resetCreated();
   }
 
@@ -54,7 +54,7 @@ class Feedback extends React.Component {
         )}
         {
           created
-          && <ConfirmationModal handleClick={this.handleOk} type="Feedback" />
+          && <ConfirmationModal handleClick={this.handleOk} type="feedback" />
         }
       </div>
     );

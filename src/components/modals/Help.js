@@ -12,7 +12,7 @@ class Help extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleOk = this.handleOk.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.modal = document.querySelector('.help-modal');
+    this.modal = () => document.querySelector('.help-modal');
   }
 
   handleChange(e) {
@@ -54,7 +54,7 @@ class Help extends React.Component {
 
         {
           created
-          && <ConfirmationModal handleClick={this.handleOk} type="Enquiry" />
+          && <ConfirmationModal handleClick={this.handleOk} type="enquiry" />
         }
       </div>
     );

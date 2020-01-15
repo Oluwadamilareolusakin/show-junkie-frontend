@@ -7,8 +7,8 @@ const ConfirmataionModal = (props) => {
   return (
     <div className="created">
       <h2>
-Your
-        {type}
+Your {' '}
+         {type}
         {' '}
 was successully sent
       </h2>

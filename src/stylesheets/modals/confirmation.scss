@@ -1,0 +1,30 @@
+@import '../components';
+
+.created {
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+  text-align: center;
+  padding: 2em 1em;
+
+  h2 {
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  button {
+    width: 100%;
+    background-color: $accent-green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: .5em;
+    transition: .5s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-green;
+    }
+  }
+}
