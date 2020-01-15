@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ConfirmationModal from '../../components/modals/Confirmation';
 import '../../stylesheets/modals/modal.scss';
 
 class Help extends React.Component {
@@ -9,7 +10,9 @@ class Help extends React.Component {
       message: null,
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleOk = this.handleOk.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.modal = this.modal.bind(this);
   }
 
   handleChange(e) {
@@ -25,6 +28,13 @@ class Help extends React.Component {
     })
   }
 
+  handleOk(e) {
+    const { closeModal, resetCreated } = this.props;
+    e.preventDefault();
+    closeModal(this.modal());
+    resetCreated();
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     const { message } = this.state;
@@ -35,14 +45,19 @@ class Help extends React.Component {
   modal = () => document.querySelector('.help-modal');
 
   render() {
-    const { closeModal } = this.props; 
+    const { closeModal, created } = this.props; 
     return (
       <div className="help-modal modal column">
         <div className="close" onClick={() => closeModal(this.modal())}></div>
-        <form className="column">
+        {!created && <form className="column">
           <textarea type="text" rows="12" onChange={this.handleChange} placeholder="Ask us anything...."/>
           <button type="buttons" onClick={(event) => this.handleSubmit(event)}>SEND</button>
-        </form>
+        </form>}
+
+        {
+          created && 
+          <ConfirmationModal handleClick={this.handleOk} type="Enquiry"/>
+        }
       </div>
     );
   }
@@ -50,11 +65,13 @@ class Help extends React.Component {
 
 Help.defaultProps = {
   created: false,
+  resetCreated: () => {},
   submitEnquiry: () => {},
 }
 
 Help.propTypes = {
   created: PropTypes.bool,
+  resetCreated: PropTypes.func,
   submitEnquiry: PropTypes.func,
 }
 
