@@ -6,7 +6,7 @@ const STORE_SHOW_ID = "STORE_SHOW_ID";
 
 export const fetchEpisodes = (id) => {
   return async(dispatch) => {
-    const episodesData = await fetch(`http://api.tvmaze.com/shows/${id}/episodes`);
+    const episodesData = await fetch(`https://api.tvmaze.com/shows/${id}/episodes`);
     const episodes = await episodesData.json();
     dispatch(recieveEpisodes(episodes));
   }
@@ -22,7 +22,7 @@ const recieveEpisodes = (episodes) => {
 
 export const fetchSeasons = (id) => {
   return async(dispatch) => {
-    const seasonsData = await fetch(`http://api.tvmaze.com/shows/${id}/seasons`);
+    const seasonsData = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`);
     const seasons = await seasonsData.json();
     dispatch(recieveSeasons(seasons));
   }
@@ -38,7 +38,7 @@ const recieveSeasons = (seasons) => {
 export const getShows = (country, date) => {
   return async(dispatch) => {
     try {
-      const shows = await fetch(`http://api.tvmaze.com/schedule?country=${country}&date=${date}`);
+      const shows = await fetch(`https://api.tvmaze.com/schedule?country=${country}&date=${date}`);
       const response = await shows.json();
       dispatch(recieveShows(response));
     } catch {
@@ -58,7 +58,7 @@ const recieveShows = (shows) => {
 export const getShow = (showId) => {
   return async(dispatch) => {
     try{
-      const show = await fetch(`http://api.tvmaze.com/shows/${showId}`);
+      const show = await fetch(`https://api.tvmaze.com/shows/${showId}`);
       const data = await show.json();
       dispatch(recieveShow(data));
     } catch (error) {
