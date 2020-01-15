@@ -7,7 +7,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  created: state.enquiriesReducer.createdEnquiry,
+  created: state.sharedReducer.created,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Help);
