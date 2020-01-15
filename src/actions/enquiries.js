@@ -4,7 +4,7 @@ const CREATED_ENQUIRY = "CREATE_ENQUIRY";
 const RECIEVE_ENQUIRIES = "RECIEVE_ENQUIRIES";
 const API_BASE_URL = "https://api-showjunkie.herokuapp.com";
 
-export const fetchEnquiries = (user_id = 1) => {
+export const fetchEnquiries = () => {
   return async(dispatch) => {
     try {
       const enquiries = await Axios.get(`${API_BASE_URL}/enquiries`)
@@ -16,15 +16,13 @@ export const fetchEnquiries = (user_id = 1) => {
 }
 
 
-export const createEnquiry = (message) => {
+export const createEnquiry = (message, user_id = 1) => {
   return async(dispatch) => {
     try {
       const form = new FormData();
       form.set('message', message);
-      const postRequest = await Axios.post(`${API_BASE_URL}/enquiries`, form, {
-        headers: {'Content-Type': 'multi-part/form-data', 'Access-Control-Allow-Origin': '*'},
-      });
-      postRequest.then( data =>dispatch(createdEnquiry()) )
+      const postRequest = await Axios.post(`${API_BASE_URL}/users/${user_id}enquiries`, form);
+      postRequest.then(dispatch(createdEnquiry()) )
     } catch(error) {
       console.log(error);
     }
