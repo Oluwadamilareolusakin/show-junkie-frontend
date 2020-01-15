@@ -13,7 +13,7 @@ const ShowCard = (props) => {
   return (
     <div className="show-card">
       { image
-        ? <div className="show-image"><img src={image.original} /></div>
+        ? <div className="show-image"><img alt="show-junkie" src={image.original} /></div>
         : <div className="show-image blank-image column">{network.name}</div>}
       <div className="show-details">
         <div className="row name-rating">

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { updateCurrentCountry } from '../../actions/filter';
+import updateCurrentCountry from '../../actions/filter';
 import { getShows } from '../../actions/show';
 import CountryFilter from '../../components/filters/CountryFilter';
 

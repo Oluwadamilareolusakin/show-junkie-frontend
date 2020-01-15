@@ -30,10 +30,10 @@ const NavBar = (props) => {
           <Link to="/profile" className="navbar-link">Profile</Link>
         </div>
         <div>
-          <Link className="navbar-link" onClick={(event) => handleModal(event, helpModal())}>Help</Link>
+          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={(event) => handleModal(event, helpModal())}>Help</button>
         </div>
         <div>
-          <Link className="navbar-link" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</Link>
+          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</button>
         </div>
         <div>
           <Link to="/logout" className="navbar-link">Logout</Link>

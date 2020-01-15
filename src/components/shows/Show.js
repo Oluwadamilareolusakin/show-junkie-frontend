@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes, { oneOfType } from 'prop-types';
 import ShowHeader from './ShowHeader';
 import ShowBody from './ShowBody';

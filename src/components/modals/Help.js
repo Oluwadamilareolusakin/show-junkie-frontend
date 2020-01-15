@@ -13,19 +13,15 @@ class Help extends React.Component {
     this.handleOk = this.handleOk.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.modal = this.modal.bind(this);
+    this.modal = document.querySelector('.help-modal');
   }
 
   handleChange(e) {
-    if (e.target.id === 'email') {
+    if (e.target.id === 'message') {
       this.setState({
-        email: e.target.value,
+        message: e.target.value,
       });
-      return;
     }
-
-    this.setState({
-      message: e.target.value,
-    });
   }
 
   handleOk(e) {
@@ -42,17 +38,18 @@ class Help extends React.Component {
     submitEnquiry(message);
   }
 
-  modal() { return document.querySelector('.help-modal'); }
 
   render() {
     const { closeModal, created } = this.props;
     return (
       <div className="help-modal modal column">
-        <div className="close" onClick={() => closeModal(this.modal())} />
+        <button type="button" className="no-bg-btn" onClick={() => closeModal(this.modal())}>
+          <div className="close" />
+        </button>
         {!created && (
         <form className="column">
-          <textarea type="text" rows="12" onChange={this.handleChange} placeholder="Ask us anything...." />
-          <button type="buttons" onClick={(event) => this.handleSubmit(event)}>SEND</button>
+          <textarea type="text" id="message" rows="12" onChange={this.handleChange} placeholder="Ask us anything...." />
+          <button type="button" onClick={(event) => this.handleSubmit(event)}>SEND</button>
         </form>
         )}
 

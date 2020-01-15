@@ -14,6 +14,7 @@ class Feedback extends React.Component {
     this.handleOk = this.handleOk.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.modal = this.modal.bind(this);
+    this.modal = document.querySelector('.feedback-modal');
   }
 
   handleChange(e) {
@@ -27,7 +28,7 @@ class Feedback extends React.Component {
   handleOk(e) {
     const { closeModal, resetCreated } = this.props;
     e.preventDefault();
-    closeModal(this.modal());
+    closeModal(this.modal);
     resetCreated();
   }
 
@@ -38,17 +39,18 @@ class Feedback extends React.Component {
     submitSuggestion(message);
   }
 
-  modal() { return document.querySelector('.feedback-modal'); }
 
   render() {
     const { closeModal, created } = this.props;
     return (
       <div className="feedback-modal modal column">
-        <div className="close" onClick={() => closeModal(this.modal())} />
+        <button type="button" className="no-bg-btn" onClick={() => closeModal(this.modal())}>
+          <div className="close" />
+        </button>
         {!created && (
         <form className="column">
           <textarea rows="12" id="message" type="text" onChange={this.handleChange} placeholder="Leave us a message or a suggestion" />
-          <button type="buttons" onClick={(event) => this.handleSubmit(event)}>SEND FEEDBACK</button>
+          <button type="button" onClick={(event) => this.handleSubmit(event)}>SEND FEEDBACK</button>
         </form>
         )}
         {

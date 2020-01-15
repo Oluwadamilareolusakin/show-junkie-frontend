@@ -29,6 +29,12 @@
   flex-flow: column nowrap;
 }
 
+.no-bg-btn{
+  border: none;
+  background: 0 0;
+}
+
+
 .filter {
   select {
     border-radius: 5px;

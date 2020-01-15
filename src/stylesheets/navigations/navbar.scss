@@ -16,17 +16,19 @@
   }
 
   .nav-right {
-    a{
+
+    
+    a, .nav-btn{
       color: white;
       text-decoration: none;
       margin-right: 1em;
-
       transition: .5s;
     
-    &:hover {
-      color: $link-hover-grey; 
+      &:hover {
+        color: $link-hover-grey; 
+      }
     }
-    }
-  }
 
-}
+  }
+  
+  }

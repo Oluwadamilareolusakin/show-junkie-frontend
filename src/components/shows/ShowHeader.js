@@ -20,7 +20,7 @@ const ShowHeader = (props) => {
   return (
     <div className="show-header row">
       <div className="show-left">
-        <img src={original} />
+        <img alt="show-junkie" src={original} />
       </div>
       <div className="show-right column">
         <h1 className="show-name">

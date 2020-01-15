@@ -34,7 +34,7 @@ const SessionForm = (props) => {
           {buttonName}
         </button>
         <Link to={actionPath} className="action">
-          <button className="action-btn">{actionButtonName}</button>
+          <button type="button" className="action-btn">{actionButtonName}</button>
         </Link>
       </form>
     </div>

@@ -19,7 +19,6 @@ const showReducer = (state = {}, action) => {
     }
 
     case RECIEVE_SEASONS: {
-      console.log(action.seasons);
       return { ...state, seasons: action.seasons, fetchedSeasons: true };
     }
 
