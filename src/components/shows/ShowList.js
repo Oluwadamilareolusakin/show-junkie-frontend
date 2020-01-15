@@ -14,7 +14,7 @@ class ShowList extends React.Component {
     const { shows, fetchedShows } = this.props;
     return (
       <div className="shows row">
-        { fetchedShows && shows.map(data => <ShowCard data={data} />) }
+        { fetchedShows && shows.map(data => <ShowCard key={data.id} data={data} />) }
       </div>
     );
   }
@@ -24,12 +24,16 @@ ShowList.defaultProps = {
   shows: {},
   fetchShows: () => {},
   fetchedShows: false,
+  date: "",
+  country: "",
 }
 
 ShowList.propTypes = {
-  shows: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  shows: PropTypes.arrayOf(PropTypes.PropTypes.oneOfType(Object)),
   fetchShows: PropTypes.func,
   fetchedShows: PropTypes.bool,
+  date: PropTypes.string,
+  country: PropTypes.string,
 }
 
 

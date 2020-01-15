@@ -18,7 +18,7 @@ const Episode = (props) => {
   const {airtime, airdate, name, number, runtime, season, url} = episode;
   return (
     <div className="episode">
-      <h2 className="name"><a href={url} target="_blank" rel="noopener norefferer">{name}</a></h2>
+      <h2 className="name"><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h2>
       <div className="existence-details row">
         <p className="season">S{season}</p>
         <p className="episode-number">Episode: {number}</p>

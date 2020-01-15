@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import PropTypes from 'prop-types';
 import SideBar from './navigations/Sidebar';
 import NavBar from './navigations/NavBar';
 import SignupPage from './signup/SignupPage';
@@ -53,5 +54,15 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   resetCreated: () => dispatch(resetCreated()),
 });
+
+App.defaultProps = {
+  resetCreated: () => {},
+  loggedIn: false,
+}
+
+App.propTypes = {
+  resetCreated: PropTypes.func,
+  loggedIn: PropTypes.bool,
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

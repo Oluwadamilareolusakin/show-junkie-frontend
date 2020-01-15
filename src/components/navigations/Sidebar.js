@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/sidebar.scss';
 
-const SideBar = (props) => {
+const SideBar = () => {
   return (
     <div className="sidebar">
       <div>

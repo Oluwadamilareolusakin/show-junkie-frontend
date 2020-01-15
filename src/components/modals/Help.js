@@ -42,7 +42,7 @@ class Help extends React.Component {
     submitEnquiry(message);
   }
 
-  modal = () => document.querySelector('.help-modal');
+  modal(){ return document.querySelector('.help-modal'); }
 
   render() {
     const { closeModal, created } = this.props; 
@@ -61,18 +61,20 @@ class Help extends React.Component {
       </div>
     );
   }
-};
+}
 
 Help.defaultProps = {
   created: false,
   resetCreated: () => {},
   submitEnquiry: () => {},
+  closeModal: () => {},
 }
 
 Help.propTypes = {
   created: PropTypes.bool,
   resetCreated: PropTypes.func,
   submitEnquiry: PropTypes.func,
+  closeModal: PropTypes.func,
 }
 
 export default Help;

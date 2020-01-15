@@ -7,7 +7,7 @@ class Homepage extends React.Component {
     return (
       <div>
         <div className="show-list-header row">
-          <h2>Today's Shows</h2>
+          <h2>Today&apos;s Shows</h2>
           <CountryFilter />
         </div>
         <ShowList />

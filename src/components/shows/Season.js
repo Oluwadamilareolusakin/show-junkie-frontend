@@ -26,7 +26,7 @@ const Season = (props) => {
       {image ? <img className="season-image" src={image && image.original } /> : <div className="blank-image column">Boy</div>}
       <div className="season-right column">
         <p className="season-number">
-          <a href={url} target="_blank" rel="noopener norefferer">
+          <a href={url} target="_blank" rel="noopener noreferrer">
             {number}
           </a>
         </p>

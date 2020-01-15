@@ -39,7 +39,7 @@ class Feedback extends React.Component {
     submitSuggestion(message);
   }
 
-  modal = () => document.querySelector('.feedback-modal');
+  modal() { return document.querySelector('.feedback-modal'); }
 
   render() {
     const { closeModal, created } = this.props;
@@ -57,18 +57,20 @@ class Feedback extends React.Component {
       </div>
     );
   }
-};
+}
 
 Feedback.defaultProps = {
   created: false,
   resetCreated: () => {},
   submitSuggestion: () => {},
+  closeModal: () => {},
 }
 
 Feedback.propTypes = {
   created: PropTypes.bool,
   resetCreated: PropTypes.func,
   submitSuggestion: PropTypes.func,
+  closeModal: PropTypes.func,
 }
 
 export default Feedback;

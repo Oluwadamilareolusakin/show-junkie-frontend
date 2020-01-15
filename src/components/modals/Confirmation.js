@@ -19,7 +19,7 @@ ConfirmataionModal.defaultProps = {
 
 ConfirmataionModal.propTypes = {
   type: PropTypes.string,
-  clickHandler: PropTypes.func,
+  handleClick: PropTypes.func,
 }
 
 export default ConfirmataionModal;

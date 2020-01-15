@@ -44,11 +44,11 @@ const NavBar = (props) => {
 }
 
 NavBar.defaultProps = {
-  open: false,
+  openModal: false,
 }
 
 NavBar.propTypes = {
-  open: PropTypes.bool,
+  openModal: PropTypes.func,
 }
 
 

@@ -1,7 +1,6 @@
 import Axios from "axios";
 import { create } from './shared';
 
-const CREATED_ENQUIRY = "CREATE_ENQUIRY";
 const RECIEVE_ENQUIRIES = "RECIEVE_ENQUIRIES";
 const API_BASE_URL = "https://api-showjunkie.herokuapp.com";
 

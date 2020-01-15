@@ -14,7 +14,7 @@ class EpisodeList extends React.Component {
 
     return (
       <div className="episodes row">
-        {fetchedEpisodes && episodes.map(episode => <Episode episode={episode}/>)}
+        {fetchedEpisodes && episodes.map(episode => <Episode key={episode.id} episode={episode}/>)}
       </div>
     )
   }

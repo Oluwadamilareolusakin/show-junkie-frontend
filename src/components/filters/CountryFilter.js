@@ -14,17 +14,23 @@ const CountryFilter = (props) => {
   
   return (
     <select className="category-filter filter" value={currentCountry} onChange={(event) => handleChange(event)}>
-      {countries.map(country => <option value={country.code}>{country.name}</option>)}
+      {countries.map(country => <option value={country.code} key={country.name}>{country.name}</option>)}
     </select>
   );
 };
 
 CountryFilter.defaultProps = {
-  country: "US",
+  currentCountry: "US",
+  date: "",
+  setCurrentCountry: () => {},
+  fetchShows: () => {},
 };
 
 CountryFilter.propTypes = {
-  country: PropTypes.string,
+  currentCountry: PropTypes.string,
+  date: PropTypes.string,
+  setCurrentCountry: PropTypes.func,
+  fetchShows: PropTypes.func,
 };
 
 export default CountryFilter;

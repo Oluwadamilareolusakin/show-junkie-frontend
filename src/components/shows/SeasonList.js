@@ -14,7 +14,7 @@ class SeasonList extends React.Component {
 
     return (
       <div className="seasons row">
-        {fetchedSeasons && seasons.map(season => <Season season={season}/>)}
+        {fetchedSeasons && seasons.map(season => <Season key={season.id} season={season}/>)}
       </div>
     )
   }
@@ -25,12 +25,14 @@ SeasonList.defaultProps = {
   showId: 1,
   fetchSeasons: () => {},
   seasons: {},
+  fetchedSeasons: false,
 }
 
 SeasonList.propTypes = {
   showId: PropTypes.number,
   seasons: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
   fetchSeasons: PropTypes.func,
+  fetchedSeasons: PropTypes.bool,
 }
 
 export default SeasonList;

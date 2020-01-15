@@ -24,6 +24,7 @@ export const fetchSeasons = (id) => {
   return async(dispatch) => {
     const seasonsData = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`);
     const seasons = await seasonsData.json();
+    console.log("seasons")
     dispatch(recieveSeasons(seasons));
   }
 };
@@ -41,7 +42,7 @@ export const getShows = (country, date) => {
       const shows = await fetch(`https://api.tvmaze.com/schedule?country=${country}&date=${date}`);
       const response = await shows.json();
       dispatch(recieveShows(response));
-    } catch {
+    } catch(error) {
       //handle errors
       return "There was a problem retrieving your show :'(";
     }
@@ -64,7 +65,7 @@ export const getShow = (showId) => {
     } catch (error) {
       // handle errors
       return "There was a problem retrieving your show :'(";
-    };
+    }
   }
 };
 
