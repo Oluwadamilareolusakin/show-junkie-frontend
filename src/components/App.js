@@ -4,13 +4,15 @@ import SideBar from './navigations/Sidebar';
 import NavBar from './navigations/NavBar';
 import SignupPage from './signup/SignupPage';
 import Help from '../containers/modals/Help';
-import Feedback from './modals/Feedback';
+import Feedback from './../containers/modals/Feedback';
 import Show from '../containers/shows/Show';
 import LoginPage from './login/LoginPage';
 import { connect } from 'react-redux';
 import HomePage from './homepage/Homepage';
 import EpisodeList from '../containers/shows/EpisodeList';
 import SeasonList from '../containers/shows/SeasonList';
+import { resetCreated } from '../actions/shared';
+
 
 const App = (props) => {
   const { loggedIn } = props;
@@ -20,9 +22,11 @@ const App = (props) => {
   };
 
   const closeModal = (modal) => {
+    const { resetCreated } = props;
     if (modal.classList.contains('open')){
       modal.classList.toggle('open');
     }
+    resetCreated();
   };
 
   return (
@@ -46,4 +50,8 @@ const mapStateToProps = state => ({
   loggedIn: state.sessionReducer.loggedIn,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  resetCreated: () => dispatch(resetCreated()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
