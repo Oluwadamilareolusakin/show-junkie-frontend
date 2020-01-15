@@ -7,10 +7,11 @@ const ConfirmataionModal = (props) => {
   return (
     <div className="created">
       <h2>
-Your {' '}
-         {type}
+        Your 
         {' '}
-was successully sent
+        {type}
+        {' '}
+        was successully sent
       </h2>
       <button type="button" onClick={event => handleClick(event)}>Ok!</button>
     </div>
