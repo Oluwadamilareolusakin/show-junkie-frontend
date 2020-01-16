@@ -18,10 +18,12 @@
       margin-right: 2em;
     }
 
-    a {
+    a, .no-bg-btn {
       text-decoration: none;
+      text-align: left;
       color: $accent-purple;
       font-weight: 500;
+      font-size: 1em;
     }
   }
 

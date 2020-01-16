@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/sidebar.scss';
 
 const SideBar = (props) => {
-  const { closeModal } = props;
-  const sideBar = () => document.querySelector('.sidebar');
+  const { openModal } = props;
+  const handleModal = (event, modal) => {
+    event.preventDefault();
+    openModal(modal);
+  };
+  const helpModal = () => document.querySelector('.help-modal');
+  const feedbackModal = () => document.querySelector('.feedback-modal');
 
   return (
     <div className="sidebar column">
@@ -23,11 +28,11 @@ const SideBar = (props) => {
       </div>
       <div className="sidebar-link-holder row">
         <div className="help" />
-        <Link to="/help" className="sidebar-link">Help</Link>
+        <button type="button" className="no-bg-btn sidebar-link" onClick={(event) => handleModal(event, helpModal())}>Help</button>
       </div>
       <div className="sidebar-link-holder row">
         <div className="feedback" />
-        <Link to="/feedback" className="sidebar-link">Feedback</Link>
+        <button type="button" className="no-bg-btn sidebar-link" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</button>
       </div>
       <div className="sidebar-link-holder row">
         <div className="logout" />

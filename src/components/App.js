@@ -39,7 +39,7 @@ const App = (props) => {
 
   return (
     <Router>
-      <SideBar openModal={(modal) => openModal(modal)} closeModal={(modal) => closeModal(modal)} />
+      <SideBar openModal={(modal) => openModal(modal)} />
       <NavBar openModal={(modal) => openModal(modal)} />
       <Help closeModal={(modal) => closeModal(modal)} />
       <Feedback closeModal={(modal) => closeModal(modal)} />
