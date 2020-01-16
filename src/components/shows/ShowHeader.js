@@ -18,7 +18,7 @@ const ShowHeader = (props) => {
   const { original } = image;
   const showImageStyle = {
     backgroundImage: `url(${original})`,
-  }
+  };
 
   return (
     <div className="show-header row">
@@ -72,7 +72,7 @@ const ShowHeader = (props) => {
                 </h3>
               </div>
               <div className="show-genres row">
-                {genres.forEach(genre => (
+                {genres.forEach((genre) => (
                   <p key={`${genre}${id}`} className="show-genre">
                     {genre}
                   </p>
@@ -94,7 +94,7 @@ const ShowHeader = (props) => {
                   {time}
                 </p>
                 <p className="show-days`">
-                  {days.forEach(day => <p className="show-showing-day">{day}</p>)}
+                  {days.forEach((day) => <p className="show-showing-day">{day}</p>)}
                 </p>
               </div>
             </div>

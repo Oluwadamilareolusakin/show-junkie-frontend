@@ -18,9 +18,9 @@ const CountryFilter = (props) => {
     <select
       className="category-filter filter"
       value={currentCountry}
-      onChange={event => handleChange(event)}
+      onChange={(event) => handleChange(event)}
     >
-      {countries.map(country => (
+      {countries.map((country) => (
         <option
           value={country.code}
           key={country.name}

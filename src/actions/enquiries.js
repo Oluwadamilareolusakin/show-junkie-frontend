@@ -17,7 +17,7 @@ export const createEnquiry = (message, userId = 1) => async (dispatch) => {
   }
 };
 
-const recieveEnquiries = enquiries => ({
+const recieveEnquiries = (enquiries) => ({
   type: RECIEVE_ENQUIRIES,
   enquiries,
 });
@@ -25,7 +25,7 @@ const recieveEnquiries = enquiries => ({
 export const fetchEnquiries = () => async (dispatch) => {
   try {
     const enquiries = await Axios.get(`${API_BASE_URL}/enquiries`);
-    enquiries.then(data => dispatch(recieveEnquiries(data)));
+    enquiries.then((data) => dispatch(recieveEnquiries(data)));
   } catch (error) {
     // handle errors
   }

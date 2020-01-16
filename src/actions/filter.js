@@ -1,6 +1,6 @@
 const UPDATE = 'UPDATE';
 
-const updateCurrentCountry = country => ({
+const updateCurrentCountry = (country) => ({
   type: UPDATE,
   country,
 });

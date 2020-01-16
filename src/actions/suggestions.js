@@ -17,7 +17,7 @@ export const createSuggestion = (message, userId = 1) => async (dispatch) => {
   }
 };
 
-const recieveSuggestions = suggestions => ({
+const recieveSuggestions = (suggestions) => ({
   type: RECIEVE_SUGGESTIONS,
   suggestions,
 });
@@ -25,7 +25,7 @@ const recieveSuggestions = suggestions => ({
 export const fetchsuggestions = () => async (dispatch) => {
   try {
     const suggestions = await Axios.get(`${API_BASE_URL}/suggestions`);
-    suggestions.then(data => dispatch(recieveSuggestions(data)));
+    suggestions.then((data) => dispatch(recieveSuggestions(data)));
   } catch (error) {
     // handle errors
   }

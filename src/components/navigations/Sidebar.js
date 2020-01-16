@@ -8,28 +8,34 @@ const SideBar = (props) => {
 
   return (
     <div className="sidebar column">
-      
+
       <div className="sidebar-link-holder row">
-        <div className="home"></div><Link to="/" className="sidebar-link">Home</Link>
+        <div className="home" />
+        <Link to="/" className="sidebar-link">Home</Link>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="your-shows"></div><Link to="/your-shows" className="sidebar-link">Your Shows</Link>
+        <div className="your-shows" />
+        <Link to="/your-shows" className="sidebar-link">Your Shows</Link>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="profile"></div><Link to="/profile" className="sidebar-link">Profile</Link>
+        <div className="profile" />
+        <Link to="/profile" className="sidebar-link">Profile</Link>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="help"></div><Link to="/help" className="sidebar-link">Help</Link>
+        <div className="help" />
+        <Link to="/help" className="sidebar-link">Help</Link>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="feedback"></div><Link to="/feedback" className="sidebar-link">Feedback</Link>
+        <div className="feedback" />
+        <Link to="/feedback" className="sidebar-link">Feedback</Link>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="logout"></div><Link exact to="/logout" className="sidebar-link">Logout</Link>
+        <div className="logout" />
+        <Link exact to="/logout" className="sidebar-link">Logout</Link>
       </div>
     </div>
   );
-}
+};
 SideBar.defaultProps = {
 };
 

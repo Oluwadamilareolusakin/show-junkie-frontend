@@ -23,7 +23,7 @@ const ShowCard = (props) => {
           <p className={average > 5 ? 'good-rating' : 'poor-rating'}>{average || 'No rating'}</p>
         </div>
         <div className="genres row">
-          {genres.map(genre => <span key={genre} className="genre">{genre}</span>)}
+          {genres.map((genre) => <span key={genre} className="genre">{genre}</span>)}
           <p className="runtime">
             {runtime}
 minutes

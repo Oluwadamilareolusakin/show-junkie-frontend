@@ -16,10 +16,12 @@ const NavBar = (props) => {
   return (
     <nav className="navbar row">
       <div className="nav-left row">
-        <button 
-          onClick={(event) => handleModal(event, sideBar())} 
-          className="mobile-menu no-bg-btn">
-        </button>
+        <button
+          label="button"
+          type="button"
+          onClick={(event) => handleModal(event, sideBar())}
+          className="mobile-menu no-bg-btn"
+        />
         <Link to="/" className="logo">
           <h3>Show Junkie</h3>
         </Link>
@@ -35,10 +37,10 @@ const NavBar = (props) => {
           <Link to="/profile" className="navbar-link">Profile</Link>
         </div>
         <div>
-          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={event => handleModal(event, helpModal())}>Help</button>
+          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={(event) => handleModal(event, helpModal())}>Help</button>
         </div>
         <div>
-          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
+          <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</button>
         </div>
         <div>
           <Link to="/logout" className="navbar-link">Logout</Link>

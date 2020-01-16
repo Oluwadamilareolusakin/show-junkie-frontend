@@ -3,14 +3,14 @@ import { getShows } from '../../actions/show';
 import ShowList from '../../components/shows/ShowList';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   country: state.filterReducer.currentCountry,
   date: state.filterReducer.currentDate,
   shows: state.showReducer.todaysShows,
   fetchedShows: state.showReducer.fetchedShows,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchShows: (country, date) => dispatch(getShows(country, date)),
 });
 

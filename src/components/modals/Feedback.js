@@ -42,12 +42,16 @@ class Feedback extends React.Component {
     const { closeModal, created } = this.props;
     return (
       <div className="feedback-modal modal column">
-        <button type="button" className="close no-bg-btn" onClick={() => closeModal(this.modal())}>
-        </button>
+        <button
+          label="button"
+          type="button"
+          className="close no-bg-btn"
+          onClick={() => closeModal(this.modal())}
+        />
         {!created && (
         <form className="column">
           <textarea rows="12" id="message" type="text" onChange={this.handleChange} placeholder="Leave us a message or a suggestion" />
-          <button type="button" onClick={event => this.handleSubmit(event)}>SEND FEEDBACK</button>
+          <button type="button" onClick={(event) => this.handleSubmit(event)}>SEND FEEDBACK</button>
         </form>
         )}
         {

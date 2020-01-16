@@ -4,17 +4,17 @@ const RECIEVE_SEASONS = 'RECIEVE_SEASONS';
 const RECIEVE_SHOW = 'RECIEVE_SHOW';
 const STORE_SHOW_ID = 'STORE_SHOW_ID';
 
-const recieveShows = shows => ({
+const recieveShows = (shows) => ({
   type: RECIEVE_SHOWS,
   shows,
 });
 
-const recieveSeasons = seasons => ({
+const recieveSeasons = (seasons) => ({
   type: RECIEVE_SEASONS,
   seasons,
 });
 
-const recieveEpisodes = episodes => ({
+const recieveEpisodes = (episodes) => ({
   type: RECIEVE_EPISODES,
   episodes,
 });
@@ -31,29 +31,29 @@ export const getShows = (country, date) => async (dispatch) => {
 };
 
 
-const recieveShow = show => ({
+const recieveShow = (show) => ({
   type: RECIEVE_SHOW,
   show,
 });
 
-export const storeShowId = showId => ({
+export const storeShowId = (showId) => ({
   type: STORE_SHOW_ID,
   showId,
 });
 
-export const fetchSeasons = id => async (dispatch) => {
+export const fetchSeasons = (id) => async (dispatch) => {
   const seasonsData = await fetch(`https://api.tvmaze.com/shows/${id}/seasons`);
   const seasons = await seasonsData.json();
   dispatch(recieveSeasons(seasons));
 };
 
-export const fetchEpisodes = id => async (dispatch) => {
+export const fetchEpisodes = (id) => async (dispatch) => {
   const episodesData = await fetch(`https://api.tvmaze.com/shows/${id}/episodes`);
   const episodes = await episodesData.json();
   dispatch(recieveEpisodes(episodes));
 };
 
-export const getShow = showId => async (dispatch) => {
+export const getShow = (showId) => async (dispatch) => {
   try {
     const show = await fetch(`https://api.tvmaze.com/shows/${showId}`);
     const data = await show.json();
