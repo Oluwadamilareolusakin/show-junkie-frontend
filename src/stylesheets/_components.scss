@@ -1,3 +1,21 @@
+// Breakpoints
+$xx-small-bp: 320px;
+$x-small-bp: 480px;
+$small-bp: 600px;
+$medium-bp: 768px;
+$large-bp: 900px;
+$x-large-bp: 1024px;
+$xx-large-bp: 1200px;
+
+// Media Queries
+$xx-small-mq: "(min-width: #{$xx-small-bp})";
+$x-small-mq: "(min-width: #{$x-small-bp})";
+$small-mq: "(min-width: #{$small-bp})";
+$medium-mq: "(min-width: #{$medium-bp})";
+$large-mq: "(min-width: #{$large-bp})";
+$x-large-mq: "(min-width: #{$x-large-bp})";
+$xx-large-mq: "(min-width: #{$xx-large-bp})";
+
 //Fonts
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
 $primary-font: 'Montserrat', sans-serif;
