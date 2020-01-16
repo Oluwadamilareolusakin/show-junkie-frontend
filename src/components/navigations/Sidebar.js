@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/sidebar.scss';
 
@@ -42,9 +43,11 @@ const SideBar = (props) => {
   );
 };
 SideBar.defaultProps = {
+  openModal: () => {},
 };
 
 SideBar.propTypes = {
+  openModal: PropTypes.func,
 };
 
 
