@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ConfirmationModal from './Confirmation';
-import '../../stylesheets/modals/modal.scss';
 
 class Help extends React.Component {
   constructor(props) {

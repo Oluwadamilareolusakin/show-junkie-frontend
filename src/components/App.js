@@ -30,9 +30,17 @@ const App = (props) => {
     resetCreated();
   };
 
+  const closeSideBar = () => {
+    const sideBar = document.querySelector('.sidebar');
+    if (sideBar.classList.contains('open')) 
+      sideBar.classList.toggle('open');
+  }
+
+  document.addEventListener('click', closeModal)
+
   return (
     <Router>
-      <SideBar openModal={modal => openModal(modal)} />
+      <SideBar openModal={modal => openModal(modal)} closeModal={modal => closeModal(modal)}/>
       <NavBar openModal={modal => openModal(modal)} />
       <Help closeModal={modal => closeModal(modal)} />
       <Feedback closeModal={modal => closeModal(modal)} />

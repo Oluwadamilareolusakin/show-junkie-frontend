@@ -42,16 +42,14 @@
   }
 }
 
-.modal {
-  .close {
-    @extend %fa-icon;
-    @extend .fas;
-    cursor: pointer;
+.close {
+  @extend %fa-icon;
+  @extend .fas;
+  cursor: pointer;
 
 
-    &:before {
-      content: fa-content($fa-var-times);
-    }
+  &:before {
+    content: fa-content($fa-var-times);
   }
 }
 
