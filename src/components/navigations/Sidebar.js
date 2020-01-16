@@ -29,11 +29,11 @@ const SideBar = (props) => {
       </div>
       <div className="sidebar-link-holder row">
         <div className="help" />
-        <button type="button" className="no-bg-btn sidebar-link" onClick={(event) => handleModal(event, helpModal())}>Help</button>
+        <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, helpModal())}>Help</button>
       </div>
       <div className="sidebar-link-holder row">
         <div className="feedback" />
-        <button type="button" className="no-bg-btn sidebar-link" onClick={(event) => handleModal(event, feedbackModal())}>Feedback</button>
+        <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
       </div>
       <div className="sidebar-link-holder row">
         <div className="logout" />

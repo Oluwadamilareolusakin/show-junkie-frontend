@@ -4,17 +4,17 @@ const RECIEVE_SEASONS = 'RECIEVE_SEASONS';
 const RECIEVE_SHOW = 'RECIEVE_SHOW';
 const STORE_SHOW_ID = 'STORE_SHOW_ID';
 
-const recieveShows = (shows) => ({
+const recieveShows = shows => ({
   type: RECIEVE_SHOWS,
   shows,
 });
 
-const recieveSeasons = (seasons) => ({
+const recieveSeasons = seasons => ({
   type: RECIEVE_SEASONS,
   seasons,
 });
 
-const recieveEpisodes = (episodes) => ({
+const recieveEpisodes = episodes => ({
   type: RECIEVE_EPISODES,
   episodes,
 });
