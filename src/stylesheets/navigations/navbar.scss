@@ -12,10 +12,14 @@
   .nav-left {
     color: white;
     align-items: center;
-    width: 60%;
-    justify-content: space-between;
     
     .logo {
+      display: none;
+
+      @media #{$medium-mq} {
+        display: block;
+      }
+      
       h3{
         font-family: $logo-font;
       }

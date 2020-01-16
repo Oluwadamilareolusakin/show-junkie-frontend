@@ -1,10 +1,78 @@
+@import '../components';
+
 .sidebar {
   display: none;
   position: fixed;
   top: 0;
   bottom: 0;
   background-color: white;
-  width: 50%;
+  width: 60%;
+  padding: 4em 2em;
+
+  .sidebar-link-holder {
+    align-items: center;
+    margin-bottom: 2em;
+
+    div {
+      color: $accent-green;
+      margin-right: 2em;
+    }
+
+    a {
+      text-decoration: none;
+      color: $accent-purple;
+      font-weight: 500;
+    }
+  }
+
+  .home {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-home)
+    }
+  }
+  .your-shows {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-film)
+    }
+  }
+  .profile {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-user)
+    }
+  }
+  .help {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-question)
+    }
+  }
+  .feedback {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-comment-alt)
+    }
+  }
+  .logout {
+    @extend %fa-icon;
+    @extend .fas;
+
+    &:before {
+      content: fa-content($fa-var-sign-out-alt)
+    }
+  }
 
   .close {
     color: black;

@@ -36,7 +36,7 @@ const App = (props) => {
       sideBar.classList.toggle('open');
   }
 
-  document.addEventListener('click', closeModal)
+  document.addEventListener('click', closeSideBar)
 
   return (
     <Router>

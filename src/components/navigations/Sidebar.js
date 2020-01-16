@@ -8,25 +8,24 @@ const SideBar = (props) => {
 
   return (
     <div className="sidebar column">
-      <button type="button" className="close no-bg-btn" onClick={() => closeModal(sideBar())}>
-      </button>
-      <div>
-        <Link to="/" className="sidebar-links">Home</Link>
+      
+      <div className="sidebar-link-holder row">
+        <div className="home"></div><Link to="/" className="sidebar-link">Home</Link>
       </div>
-      <div>
-        <Link to="/your-shows" className="sidebar-links">Your Shows</Link>
+      <div className="sidebar-link-holder row">
+        <div className="your-shows"></div><Link to="/your-shows" className="sidebar-link">Your Shows</Link>
       </div>
-      <div>
-        <Link to="/profile" className="sidebar-links">Profile</Link>
+      <div className="sidebar-link-holder row">
+        <div className="profile"></div><Link to="/profile" className="sidebar-link">Profile</Link>
       </div>
-      <div>
-        <Link to="/help" className="sidebar-links">Help</Link>
+      <div className="sidebar-link-holder row">
+        <div className="help"></div><Link to="/help" className="sidebar-link">Help</Link>
       </div>
-      <div>
-        <Link to="/feedback" className="sidebar-links">Feedback</Link>
+      <div className="sidebar-link-holder row">
+        <div className="feedback"></div><Link to="/feedback" className="sidebar-link">Feedback</Link>
       </div>
-      <div>
-        <Link exact to="/logout" className="sidebar-links">Logout</Link>
+      <div className="sidebar-link-holder row">
+        <div className="logout"></div><Link exact to="/logout" className="sidebar-link">Logout</Link>
       </div>
     </div>
   );

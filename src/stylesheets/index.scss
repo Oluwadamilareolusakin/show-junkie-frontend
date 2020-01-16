@@ -1,6 +1,5 @@
 @import './components';
-@import './fontawesome/scss/fontawesome.scss';
-@import './fontawesome/scss/solid.scss';
+
 
 * {
   margin: 0;
@@ -59,5 +58,17 @@
 
   &:before {
     content: fa-content($fa-var-bars );
+  }
+}
+
+.show-list-header {
+  width: 100%;
+  h2 {
+    font-size: 1em;
+  }
+
+  
+  select {
+    width: 30%;
   }
 }
