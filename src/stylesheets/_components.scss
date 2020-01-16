@@ -1,11 +1,11 @@
-// Breakpoints
-$xx-small-bp: 320px;
-$x-small-bp: 480px;
-$small-bp: 600px;
-$medium-bp: 768px;
-$large-bp: 900px;
-$x-large-bp: 1024px;
-$xx-large-bp: 1200px;
+// Breakpoints --- Added 1px to each
+$xx-small-bp: 321px;
+$x-small-bp: 481px;
+$small-bp: 601px;
+$medium-bp: 769px;
+$large-bp: 901px;
+$x-large-bp: 1025px;
+$xx-large-bp: 1201px;
 
 // Media Queries
 $xx-small-mq: "(min-width: #{$xx-small-bp})";

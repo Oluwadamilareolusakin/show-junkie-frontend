@@ -54,3 +54,12 @@
     }
   }
 }
+
+.mobile-menu {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-bars );
+  }
+}

@@ -1,13 +1,21 @@
 @import '../components';
 
+
 .navbar {
   background-color: $primary-purple;
   padding: 2em;
     width: 100%;
   justify-content: space-between;
 
+  
   .nav-left {
     color: white;
+    
+    .mobile-menu {
+      @media #{$medium-mq} {
+        display: none;
+      }
+    }
 
     a{
       text-decoration: none;

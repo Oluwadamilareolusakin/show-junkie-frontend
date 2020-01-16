@@ -15,6 +15,7 @@ const NavBar = (props) => {
   return (
     <nav className="navbar row">
       <div className="nav-left">
+        <div className="mobile-menu"></div>
         <Link to="/">
           <h3>Show Junkie</h3>
         </Link>
