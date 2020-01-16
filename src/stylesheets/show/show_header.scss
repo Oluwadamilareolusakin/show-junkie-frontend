@@ -1,30 +1,120 @@
 @import '../components';
 
 .show-header {
+  width: 100%;
 
   .show-left {
-    img{
-      height: 700px;
+    @media #{$x-large-mq} {
+      width: 40%;
+      height: 500px;
+    }
+
+    @media #{$xx-large-mq} {   
+      width: 30%;
+      height: 599px;
+    }
+
+    .show-img{
+      width: 100%;
+      height: 300px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: none;
+
+      @media #{$medium-mq} {
+        display: block;
+      }
+
+      @media #{$x-large-mq} {
+        display: block;
+        height: 500px;
+        background-size: cover;
+      }
+
+      @media #{$xx-large-mq} {
+        height: 599px;
+      }
     }
   }
 
   .show-right {
     background-image: $primary-gradient-grey;
-    width: 80%;
-    height: 700px;
     padding: 2em;
     color: white;
     justify-content: center;
+    width: 100%;
+
+    @media #{$x-large-mq} {
+      width: 60%;
+      height: 500px;
+    }
+
+    .show-right-header {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+      align-items: center;
+
+      .show-img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 40%;
+        height: 150px;
+        margin-right: .5em;
+
+        @media #{$small-mq} {
+          width: 20%;
+        }
+
+        @media #{$small-mq}{
+          background-size: contain;
+          height: 200px;
+        }
+
+        @media #{$x-large-mq} {
+          display: none;
+        }
+      }
+    }
+    
+
+    @media #{$x-large-mq} {
+      width: 60%;
+      height: 500px;
+    }
+    
+    @media #{$xx-large-mq} {
+      width: 70%;
+      height: 599px;
+    }
 
     .show-name {
       font-weight: $aux-font-weight;
-      font-size: 3em;
+      
+      @media #{$medium-mq} {
+        font-size: 1em;
+      }
+      
+      @media #{$large-mq} {
+        font-size: 3em;
+      }
     }
 
     .show-existence {
       align-items: center;
-    }
+      font-size: .6em;
 
+      @media #{$medium-mq} {
+        font-size: .8em;
+      }
+      
+      @media #{$large-mq} {
+        font-size: 1em;
+      }
+    }
+    
     .premiered {
       background-color: $accent-orange;
       color: black;
@@ -32,6 +122,8 @@
       width: 30%;
       padding: .5em;
       margin: 1em 0;
+      font-size: .7em;
+      text-align: center;
     }
 
     .good {
@@ -48,6 +140,28 @@
 
     .show-rating, .show-premier-date {
       margin: .5em 0;
+    }
+  }
+
+  .show-extra-details {
+    align-items: center;
+
+    .show-rating, .show-time, .show-runtime {
+      font-size: .5em; 
+
+      @media #{$x-small-mq} {
+        font-size: .5em;
+        margin-right: .7em;
+      }
+
+      @media #{$small-mq} {
+        font-size: .6em;
+        margin-right: 1em;
+      }
+
+      @media #{$medium-mq} {
+        font-size: .8em;
+      }
     }
   }
 

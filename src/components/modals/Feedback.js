@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ConfirmationModal from './Confirmation';
-import '../../stylesheets/modals/modal.scss';
 
 
 class Feedback extends React.Component {
@@ -43,9 +42,12 @@ class Feedback extends React.Component {
     const { closeModal, created } = this.props;
     return (
       <div className="feedback-modal modal column">
-        <button type="button" className="no-bg-btn" onClick={() => closeModal(this.modal())}>
-          <div className="close" />
-        </button>
+        <button
+          label="button"
+          type="button"
+          className="close no-bg-btn"
+          onClick={() => closeModal(this.modal())}
+        />
         {!created && (
         <form className="column">
           <textarea rows="12" id="message" type="text" onChange={this.handleChange} placeholder="Leave us a message or a suggestion" />

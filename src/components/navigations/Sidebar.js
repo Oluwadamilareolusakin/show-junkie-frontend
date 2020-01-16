@@ -1,34 +1,53 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/sidebar.scss';
 
-const SideBar = () => (
-  <div className="sidebar">
-    <div>
-      <Link to="/" className="sidebar-links">Home</Link>
-    </div>
-    <div>
-      <Link to="/your-shows" className="sidebar-links">Your Shows</Link>
-    </div>
-    <div>
-      <Link to="/profile" className="sidebar-links">Profile</Link>
-    </div>
-    <div>
-      <Link to="/help" className="sidebar-links">Help</Link>
-    </div>
-    <div>
-      <Link to="/feedback" className="sidebar-links">Feedback</Link>
-    </div>
-    <div>
-      <Link exact to="/logout" className="sidebar-links">Logout</Link>
-    </div>
-  </div>
-);
+const SideBar = (props) => {
+  const { openModal } = props;
+  const handleModal = (event, modal) => {
+    event.preventDefault();
+    openModal(modal);
+  };
+  const helpModal = () => document.querySelector('.help-modal');
+  const feedbackModal = () => document.querySelector('.feedback-modal');
 
+  return (
+    <div className="sidebar column">
+
+      <div className="sidebar-link-holder row">
+        <div className="home" />
+        <Link to="/" className="sidebar-link">Home</Link>
+      </div>
+      <div className="sidebar-link-holder row">
+        <div className="your-shows" />
+        <Link to="/your-shows" className="sidebar-link">Your Shows</Link>
+      </div>
+      <div className="sidebar-link-holder row">
+        <div className="profile" />
+        <Link to="/profile" className="sidebar-link">Profile</Link>
+      </div>
+      <div className="sidebar-link-holder row">
+        <div className="help" />
+        <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, helpModal())}>Help</button>
+      </div>
+      <div className="sidebar-link-holder row">
+        <div className="feedback" />
+        <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
+      </div>
+      <div className="sidebar-link-holder row">
+        <div className="logout" />
+        <Link exact to="/logout" className="sidebar-link">Logout</Link>
+      </div>
+    </div>
+  );
+};
 SideBar.defaultProps = {
+  openModal: () => {},
 };
 
 SideBar.propTypes = {
+  openModal: PropTypes.func,
 };
 
 

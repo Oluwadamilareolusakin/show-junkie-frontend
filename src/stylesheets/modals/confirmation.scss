@@ -4,9 +4,17 @@
   background-color: white;
   border-radius: 5px;
   border: none;
-  width: 40%;
   text-align: center;
   padding: 2em 1em;
+  width: 80%;
+
+  @media #{$medium-mq} {
+    width: 70%;
+  }
+
+  @media #{$large-mq} {
+    width: 50%;
+  }
 
   h2 {
     color: black;

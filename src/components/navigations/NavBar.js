@@ -11,11 +11,18 @@ const NavBar = (props) => {
   };
   const helpModal = () => document.querySelector('.help-modal');
   const feedbackModal = () => document.querySelector('.feedback-modal');
+  const sideBar = () => document.querySelector('.sidebar');
 
   return (
     <nav className="navbar row">
-      <div className="nav-left">
-        <Link to="/">
+      <div className="nav-left row">
+        <button
+          label="button"
+          type="button"
+          onClick={event => handleModal(event, sideBar())}
+          className="mobile-menu no-bg-btn"
+        />
+        <Link to="/" className="logo">
           <h3>Show Junkie</h3>
         </Link>
       </div>

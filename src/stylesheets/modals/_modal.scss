@@ -1,10 +1,10 @@
 @import '../components';
 
 .modal {
-  position: fixed;
   justify-content: center;
   align-items: center;
   top: 0;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
@@ -25,7 +25,15 @@
   }
 
   form {
-    width: 40%;
+    width: 80%;
+    @media #{$medium-mq} {
+      width: 70%;
+    }
+
+    @media #{$large-mq} {
+      width: 50%;
+    }
+    
     input, textarea {
       width: 100%;
       padding: 1em 1em;
