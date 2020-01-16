@@ -25,7 +25,15 @@
   }
 
   form {
-    width: 40%;
+    width: 80%;
+    @media #{$medium-mq} {
+      width: 70%;
+    }
+
+    @media #{$large-mq} {
+      width: 50%;
+    }
+    
     input, textarea {
       width: 100%;
       padding: 1em 1em;
