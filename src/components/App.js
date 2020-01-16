@@ -39,10 +39,10 @@ const App = (props) => {
 
   return (
     <Router>
-      <SideBar openModal={(modal) => openModal(modal)} />
-      <NavBar openModal={(modal) => openModal(modal)} />
-      <Help closeModal={(modal) => closeModal(modal)} />
-      <Feedback closeModal={(modal) => closeModal(modal)} />
+      <SideBar openModal={modal => openModal(modal)} />
+      <NavBar openModal={modal => openModal(modal)} />
+      <Help closeModal={modal => closeModal(modal)} />
+      <Feedback closeModal={modal => closeModal(modal)} />
       <Route exact path="/" component={loggedIn ? HomePage : HomePage} />
       <Route path="/show/:showname" component={Show} />
       <Route path="/login" component={LoginPage} />
@@ -54,11 +54,11 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   loggedIn: state.sessionReducer.loggedIn,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   resetCreated: () => dispatch(resetCreated()),
 });
 

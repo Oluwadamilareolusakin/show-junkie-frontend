@@ -19,7 +19,7 @@ const NavBar = (props) => {
         <button
           label="button"
           type="button"
-          onClick={(event) => handleModal(event, sideBar())}
+          onClick={event => handleModal(event, sideBar())}
           className="mobile-menu no-bg-btn"
         />
         <Link to="/" className="logo">

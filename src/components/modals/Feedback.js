@@ -51,7 +51,7 @@ class Feedback extends React.Component {
         {!created && (
         <form className="column">
           <textarea rows="12" id="message" type="text" onChange={this.handleChange} placeholder="Leave us a message or a suggestion" />
-          <button type="button" onClick={(event) => this.handleSubmit(event)}>SEND FEEDBACK</button>
+          <button type="button" onClick={event => this.handleSubmit(event)}>SEND FEEDBACK</button>
         </form>
         )}
         {

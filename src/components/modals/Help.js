@@ -47,7 +47,7 @@ class Help extends React.Component {
         {!created && (
         <form className="column">
           <textarea type="text" id="message" rows="12" onChange={this.handleChange} placeholder="Ask us anything...." />
-          <button type="button" onClick={(event) => this.handleSubmit(event)}>SEND</button>
+          <button type="button" onClick={event => this.handleSubmit(event)}>SEND</button>
         </form>
         )}
 
