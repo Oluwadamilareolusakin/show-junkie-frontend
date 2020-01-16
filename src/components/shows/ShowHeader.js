@@ -27,73 +27,78 @@ const ShowHeader = (props) => {
       </div>
       <div className="show-right column">
         <div className="show-right-header">
-        <div className="show-img" style={showImageStyle} />
-        <div>
-          <h1 className="show-name">
-            {name}
-            {' '}
-          </h1>
-          <div className="row show-existence">
-            <h3 className="premiered">
-  Premiered:
-              {premiered}
-            </h3>
-
-            <div className="show-status">
-              <span className={status === 'Running'
-                ? 'good'
-                : 'poor'}
-              >
-                {status}
-              </span>
-            </div>
-            <p className="show-country extra-detail">
-  Country:
-              {code}
-            </p>
-            <p className="show-language extra-detail">
-  Language:
-              {language}
-            </p>
-            {networkName && (
-            <p className="show-network extra-detail">
-  TV Network:
-              {networkName}
-            </p>
-            ) }
-          </div>
-          <div className="show-rating">
-            <h3 className={average > 5 ? 'good' : 'poor'}>
-                Ratings:
+          <div className="show-img" style={showImageStyle} />
+          <div>
+            <h1 className="show-name">
+              {name}
               {' '}
-              {average ? `${average}/10` : 'No Rating'}
-            </h3>
-          </div>
-          <div className="show-genres row">
-            {genres.forEach(genre => (
-              <p key={`${genre}${id}`} className="show-genre">
-                {genre}
+            </h1>
+            <div className="row show-existence">
+              <h3 className="premiered">
+    Premiered:
+                {premiered}
+              </h3>
+
+              <div className="show-status">
+                <span className={status === 'Running'
+                  ? 'good'
+                  : 'poor'}
+                >
+                  {status}
+                </span>
+              </div>
+              <p className="show-country extra-detail">
+    Country:
+                {code}
               </p>
-            ))}
-          </div>
+              <p className="show-language extra-detail">
+    Language:
+                {language}
+              </p>
+              {networkName && (
+              <p className="show-network extra-detail">
+    TV Network:
+                {networkName}
+              </p>
+              ) }
+            </div>
+            <div className="show-extra-details row">
 
-          <h4 className={time < 30 ? 'show-runtime good' : 'show-runtime poor'}>
-  Duration:
-            {runtime}
-            {' '}
-  minutes
-          </h4>
+              <div className="show-rating">
+                <h3 className={average > 5 ? 'good' : 'poor'}>
+                    Ratings:
+                  {' '}
+                  {average ? `${average}/10` : 'No Rating'}
+                </h3>
+              </div>
+              <div className="show-genres row">
+                {genres.forEach(genre => (
+                  <p key={`${genre}${id}`} className="show-genre">
+                    {genre}
+                  </p>
+                ))}
+              </div>
 
-          <div className="show-schedule">
-            <p className="show-time">
-  Showing time:
-              {time}
-            </p>
-            <p className="show-days`">
-              {days.forEach(day => <p className="show-showing-day">{day}</p>)}
-            </p>
+              <h4 className={time < 30 ? 'show-runtime good' : 'show-runtime poor'}>
+      Duration:
+                {' '}
+                {runtime}
+                {' '}
+      minutes
+              </h4>
+
+              <div className="show-schedule">
+                <p className="show-time">
+      Showing time:
+                  {' '}
+                  {time}
+                </p>
+                <p className="show-days`">
+                  {days.forEach(day => <p className="show-showing-day">{day}</p>)}
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
 
         </div>
 
