@@ -1,8 +1,8 @@
-# Movie Junkie
-Twitter for movies
+# Show Junkie
+Twitter for TV Shows
 
 # What it does
-It is the Frontend for Movie Junkie, a web app that allows users browse their favourite TV Shows, share comments about shows, rate shows and follow people who they share similar interests with. 
+It is the Frontend for Show Junkie, a web app that allows users browse their favourite TV Shows, share comments about shows, rate shows and follow people who they share similar interests with. 
 
 ## Built With
 - React JS
