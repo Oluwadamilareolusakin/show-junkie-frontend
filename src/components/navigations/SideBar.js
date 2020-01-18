@@ -36,7 +36,7 @@ const SideBar = (props) => {
         <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="signout" />
+        <div className="logout" />
         <button type="button" className="no-bg-btn" onClick={() => signout()}>
           Logout
         </button>
