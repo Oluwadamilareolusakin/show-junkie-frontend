@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import sessionReducer from './session';
+import authenticationReducer from './authentication';
 import showReducer from './show';
 import filterReducer from './filter';
 import enquiriesReducer from './enquiries';
@@ -7,7 +7,7 @@ import suggestionsReducer from './suggestions';
 import sharedReducer from './shared';
 
 const rootReducer = combineReducers({
-  sessionReducer,
+  authenticationReducer,
   showReducer,
   filterReducer,
   enquiriesReducer,

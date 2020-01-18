@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Signup from '../../components/signup/Signup';
-import { signUp } from '../../actions/session';
+import { signup } from '../../actions/authentication';
 
 const mapDispatchToProps = dispatch => ({
-  handleSubmit: (email, name, password) => dispatch(signUp(email, name, password)),
+  handleSubmit: (formData) => dispatch(signup(formData)),
 });
 
 export default connect(null, mapDispatchToProps)(Signup);

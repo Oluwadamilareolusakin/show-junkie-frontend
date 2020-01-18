@@ -43,7 +43,7 @@ const App = (props) => {
       <NavBar openModal={modal => openModal(modal)} />
       <Help closeModal={modal => closeModal(modal)} />
       <Feedback closeModal={modal => closeModal(modal)} />
-      <Route exact path="/" component={loggedIn ? HomePage : HomePage} />
+      <Route exact path="/" component={loggedIn ? HomePage : LoginPage} />
       <Route path="/show/:showname" component={Show} />
       <Route path="/login" component={LoginPage} />
       <Route path="/Signup" component={SignupPage} />
@@ -55,7 +55,7 @@ const App = (props) => {
 };
 
 const mapStateToProps = state => ({
-  loggedIn: state.sessionReducer.loggedIn,
+  loggedIn: state.authenticationReducer.loggedIn,
 });
 
 const mapDispatchToProps = dispatch => ({
