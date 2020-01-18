@@ -22,14 +22,14 @@ const Episode = (props) => {
     <div className="episode">
       <h2 className="name"><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></h2>
       <div className="existence-details row">
-        <p className="season">
+        <div className="season-number">
 S
           {season}
-        </p>
-        <p className="episode-number">
+        </div>
+        <div className="episode-number">
 Episode:
           {number}
-        </p>
+        </div>
       </div>
       <div className="timing row">
         <p className="airdate">
