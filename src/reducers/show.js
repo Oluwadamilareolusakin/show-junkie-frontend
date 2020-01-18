@@ -28,7 +28,11 @@ const showReducer = (state = {}, action) => {
     }
 
     case RECIEVE_FAV_LIST: {
-      return Object.assign({}, state, {favourites: [...state.favourites, ...action.list]});
+      return Object.assign({}, state, 
+                            { favourites: state.favourites ? 
+                              [...state.favourites, ...action.list] : [...action.list] 
+                            }
+                          );
     }
 
     default:

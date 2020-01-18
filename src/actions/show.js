@@ -75,13 +75,21 @@ export const fetchFavList = authToken => async (dispatch) => {
   const request = await Axios.get(`${API_BASE_URL}/favourites`, 
                                   {headers: {Authorization: authToken}});
                                   // dispatch(recieveFavList())
-                                  console.log(request);
+                                  console.log(request.error);
 };
 
-export const favourite = (id, authToken) => async (dispatch) => { 
+export const favourite = (showId, authToken) => async (dispatch) => { 
+  console.log(authToken)
   const request = await Axios.post(`${API_BASE_URL}/favourites`, 
-                                  {headers: {Authorization: authToken}});
+                                    {show_id: showId  },
+                                    { headers: 
+                                        {
+                                          'Authorization': authToken,
+                                          'Content-Type': 'application/json'
+                                        }
+                                    }
+                                  );
                                   console.log(request);
-                                  dispatch(recieveFavList([id]));
+                                  dispatch(recieveFavList([showId]));
 
 };

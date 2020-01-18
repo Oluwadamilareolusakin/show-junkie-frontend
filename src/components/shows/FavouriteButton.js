@@ -6,8 +6,8 @@ const FavouriteButton = (props) => {
 
   const addToFav = (event, showId) => {
     event.preventDefault();
-    const { favourite } = props;
-    favourite(showId);
+    const { favourite, authToken } = props;
+    favourite(showId, authToken);
   };
 
   return (
@@ -21,12 +21,14 @@ FavouriteButton.defaultProps = {
   favourite: () => {},
   favourites: [],
   showId: 1,
+  authToken: "",
 };
 
 FavouriteButton.propTypes = {
   favourite: PropTypes.func,
   favourites: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
   showId: PropTypes.number,
+  authToken: PropTypes.string,
 };
 
 
