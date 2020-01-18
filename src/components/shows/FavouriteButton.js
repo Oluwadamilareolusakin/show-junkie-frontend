@@ -2,18 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const FavouriteButton = (props) => {
-  const { showId, favourites } = props;
+  const { showId, favourites, authToken } = props;
 
   const addToFav = (event, showId) => {
     event.preventDefault();
-    const { favourite, authToken } = props;
+    const { favourite } = props;
     favourite(showId, authToken);
   };
 
+  const unfavourite = (event, showId) => {
+    event.preventDefault();
+    const { unfavourite } = props;
+    const favouriteId = favourites[showId];
+    unfavourite(showId, favouriteId, authToken);
+  }
+
   return (
-    <button type="button" onClick={event => addToFav(event, showId)}>
-      { favourites.includes(showId) ? 'Unsubscribe' : 'Add to favourites' }
-    </button>
+      favourites.includes(showId) ? 
+        <button 
+        type="button" 
+        onClick={event => unfavourite(event, showId)} 
+        className="unfavourite-btn">
+          Unsubscribe
+        </button> : 
+
+        <button 
+        type="button" 
+        onClick={event => addToFav(event, showId)} 
+        className="favourite-btn">
+          Add to favourites
+        </button>
   );
 };
 
