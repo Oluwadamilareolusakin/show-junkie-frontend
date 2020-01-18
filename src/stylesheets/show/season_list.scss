@@ -1,7 +1,14 @@
+@import '../components';
+
 div.seasons {
-  width: 90%;
+  width: 100%;
   margin: auto;
-  flex-wrap: wrap;
   padding: 1em 3em;
+  flex-flow: column;
+
+  @media #{$small-mq} {
+    flex-flow: row wrap;
+  }
+  
 }
 

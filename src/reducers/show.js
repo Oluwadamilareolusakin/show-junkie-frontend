@@ -4,6 +4,7 @@ const RECIEVE_SEASONS = 'RECIEVE_SEASONS';
 const STORE_SHOW_ID = 'STORE_SHOW_ID';
 const RECIEVE_FAV_LIST = 'RECIEVE_FAV_LIST';
 const RECIEVE_EPISODES = 'RECIEVE_EPISODES';
+const DELETE_FAV = "DELETE_FAV";
 
 const showReducer = (state = {}, action) => {
   switch (action.type) {
@@ -28,6 +29,7 @@ const showReducer = (state = {}, action) => {
     }
 
     case RECIEVE_FAV_LIST: {
+      console.log(state.favourites)
       return Object.assign({}, state, 
                             { favourites: state.favourites ? 
                               [...state.favourites, ...action.list] : [...action.list] 
