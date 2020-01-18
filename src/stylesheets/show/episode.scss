@@ -1,11 +1,15 @@
 @import '../components';
 
 .episode {
-  width: 46%;
-  background: linear-gradient(202deg, rgba(0,0,0,1) 0%, rgba(24,24,24,1) 47%, rgba(0,0,0,1) 100%);
+  width: 100%;
+  background: $primary-gradient-grey;
   border-radius: 5px;
   color: white;
-  margin: 1em;
+  margin: .5em;
+  
+  @media #{$large-mq} {
+    width: 48%;
+  }
 
   a {
     color: white;
@@ -27,17 +31,19 @@
     padding: .5em 1em;
     align-items: center;
 
-    .season {
+    .season-number {
       margin-right: 1em;
       background-color: $accent-purple;
+      width: 10%;
     }
 
-    .season, .episode-number {
+    .season-number, .episode-number {
       border-radius: 5px;
       padding: .5em;
     }
 
     .episode-number {
+      margin: 0;
       background-color: $accent-green;
     }
   }

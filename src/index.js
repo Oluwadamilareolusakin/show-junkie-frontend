@@ -7,14 +7,44 @@ import rootReducer from './reducers';
 import './stylesheets/index.scss';
 import App from './components/App';
 
-const store = createStore(rootReducer, applyMiddleware(
-  thunk,
-));
+const saveToLocalStorage = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch (error) {
+    // handle errors
+  }
+};
+
+const loadFromLocalStorage = () => {
+  try {
+    const state = localStorage.getItem('state');
+    if (state) {
+      const parsedState = JSON.parse(state);
+      return parsedState;
+    }
+    return undefined;
+  } catch (error) {
+    return undefined;
+  }
+};
+
+const persistedState = loadFromLocalStorage();
+
+const store = createStore(
+  rootReducer,
+  persistedState,
+  applyMiddleware(
+    thunk,
+  ),
+);
 
 const AppWrapper = () => (
   <Provider store={store}>
     <App />
   </Provider>
 );
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
 
 ReactDOM.render(<AppWrapper />, document.querySelector('#root'));

@@ -1,12 +1,22 @@
+import Axios from 'axios';
+
+const API_BASE_URL = 'https://api-showjunkie.herokuapp.com';
+
 const RECIEVE_EPISODES = 'RECIEVE_EPISODES';
 const RECIEVE_SHOWS = 'RECIEVE_SHOWS';
 const RECIEVE_SEASONS = 'RECIEVE_SEASONS';
 const RECIEVE_SHOW = 'RECIEVE_SHOW';
+const RECIEVE_FAV_LIST = 'RECIEVE_FAV_LIST';
 const STORE_SHOW_ID = 'STORE_SHOW_ID';
 
 const recieveShows = shows => ({
   type: RECIEVE_SHOWS,
   shows,
+});
+
+const recieveFavList = list => ({
+  type: RECIEVE_FAV_LIST,
+  list,
 });
 
 const recieveSeasons = seasons => ({
@@ -29,7 +39,6 @@ export const getShows = (country, date) => async (dispatch) => {
     // handle errors
   }
 };
-
 
 const recieveShow = show => ({
   type: RECIEVE_SHOW,
@@ -61,4 +70,37 @@ export const getShow = showId => async (dispatch) => {
   } catch (error) {
     // handle errors
   }
+};
+
+export const fetchFavList = authToken => async (dispatch) => {
+  const request = await Axios.get(`${API_BASE_URL}/favourites`,
+    { headers: { Authorization: authToken } });
+  dispatch(recieveFavList());
+
+  // const favourites = request.data.map(fav => )
+  //                                 console.log(request);
+};
+
+export const favourite = (showId, authToken) => async (dispatch) => {
+  const request = await Axios.post(`${API_BASE_URL}/favourites`,
+    { show_id: showId },
+    {
+      headers: {
+        Authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+    },);
+  dispatch(recieveFavList([showId]));
+};
+
+export const unfavourite = (showId, favouriteId, authToken) => async (dispatch) => {
+  const request = await Axios.delete(`${API_BASE_URL}/favourites/${favouriteId}`,
+    { id: favouriteId },
+    {
+      headers: {
+        Authorization: authToken,
+        'Content-Type': 'application/json',
+      },
+    },);
+  dispatch(fetchFavList(authToken));
 };
