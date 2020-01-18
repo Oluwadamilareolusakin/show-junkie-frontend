@@ -49,6 +49,10 @@
     @media #{$medium-mq} {
       display: flex;
     }
+
+    a.accent-link {
+      color: $accent-green;
+    }
     
     a, .nav-btn{
       color: white;

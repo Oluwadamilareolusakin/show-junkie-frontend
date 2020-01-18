@@ -15,35 +15,43 @@ const FavouriteButton = (props) => {
     const { unfavourite } = props;
     const favouriteId = favourites[showId];
     unfavourite(showId, favouriteId, authToken);
-  }
+  };
 
   return (
-      favourites.includes(showId) ? 
-        <button 
-        type="button" 
-        onClick={event => unfavourite(event, showId)} 
-        className="unfavourite-btn">
+    favourites.includes(showId)
+      ? (
+        <button
+          type="button"
+          onClick={event => unfavourite(event, showId)}
+          className="unfavourite-btn fav-action"
+        >
           Unsubscribe
-        </button> : 
+        </button>
+      )
 
-        <button 
-        type="button" 
-        onClick={event => addToFav(event, showId)} 
-        className="favourite-btn">
+      : (
+        <button
+          type="button"
+          onClick={event => addToFav(event, showId)}
+          className="favourite-btn fav-action"
+        >
           Add to favourites
         </button>
+      )
   );
 };
 
 FavouriteButton.defaultProps = {
   favourite: () => {},
+  unfavourite: () => {},
   favourites: [],
   showId: 1,
-  authToken: "",
+  authToken: '',
 };
 
 FavouriteButton.propTypes = {
   favourite: PropTypes.func,
+  unfavourite: PropTypes.func,
   favourites: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
   showId: PropTypes.number,
   authToken: PropTypes.string,

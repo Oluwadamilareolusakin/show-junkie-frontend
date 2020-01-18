@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   favourite: (id, authToken) => dispatch(favourite(id, authToken)),
-  unfavourite: (showId, favouriteId, authToken) => dispatch(favourite(showId, favouriteId, authToken)),
+  unfavourite: (showId, favouriteId, authToken) => dispatch(unfavourite(showId,
+    favouriteId, authToken)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FavouriteButton);

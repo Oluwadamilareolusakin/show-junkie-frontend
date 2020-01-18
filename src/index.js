@@ -11,10 +11,10 @@ const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('state', serializedState);
-  } catch(error) {
-    console.log(error);
+  } catch (error) {
+    // handle errors
   }
-}
+};
 
 const loadFromLocalStorage = () => {
   try {
@@ -24,10 +24,10 @@ const loadFromLocalStorage = () => {
       return parsedState;
     }
     return undefined;
-  } catch(error) {
+  } catch (error) {
     return undefined;
   }
-}
+};
 
 const persistedState = loadFromLocalStorage();
 
@@ -36,7 +36,7 @@ const store = createStore(
   persistedState,
   applyMiddleware(
     thunk,
-  )
+  ),
 );
 
 const AppWrapper = () => (

@@ -11,7 +11,7 @@ const ShowHeader = (props) => {
     schedule,
   } = show;
   let { summary } = show;
-  summary = summary ? summary.replace(/<\/?[^>]+>/gi, '') : "";
+  summary = summary ? summary.replace(/<\/?[^>]+>/gi, '') : '';
   const { time, days } = schedule;
   const { average } = rating;
   const networkName = network ? network.networkName : 'Unknown';
@@ -36,10 +36,10 @@ const ShowHeader = (props) => {
               {' '}
             </h1>
             <div className="row show-existence">
-              <h3 className="premiered">
+              <p className="premiered">
     Premiered:
                 {premiered}
-              </h3>
+              </p>
 
               <div className="show-status">
                 <span className={status === 'Running'
@@ -68,11 +68,11 @@ const ShowHeader = (props) => {
             <div className="show-extra-details row">
 
               <div className="show-rating">
-                <h3 className={average > 5 ? 'good' : 'poor'}>
+                <p className={average > 5 ? 'good' : 'poor'}>
                     Ratings:
                   {' '}
                   {average ? `${average}/10` : 'No Rating'}
-                </h3>
+                </p>
               </div>
               <div className="show-genres row">
                 {genres.forEach(genre => (

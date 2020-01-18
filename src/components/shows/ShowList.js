@@ -5,11 +5,14 @@ import '../../stylesheets/show/show.scss';
 
 class ShowList extends React.Component {
   componentDidMount() {
-    const { country, date, 
-            fetchShows,
-            fetchFavList, authToken } = this.props;
+    const {
+      country, date,
+      fetchShows,
+      fetchFavList, authToken,
+    } = this.props;
+
     fetchShows(country, date);
-    fetchFavList(authToken)
+    fetchFavList(authToken);
   }
 
   render() {
@@ -28,14 +31,18 @@ ShowList.defaultProps = {
   fetchedShows: false,
   date: '',
   country: '',
+  authToken: '',
+  fetchFavList: () => {},
 };
 
 ShowList.propTypes = {
   shows: PropTypes.arrayOf(PropTypes.PropTypes.oneOfType(Object)),
   fetchShows: PropTypes.func,
+  fetchFavList: PropTypes.func,
   fetchedShows: PropTypes.bool,
   date: PropTypes.string,
   country: PropTypes.string,
+  authToken: PropTypes.string,
 };
 
 

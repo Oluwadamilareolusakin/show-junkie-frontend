@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchShows: (country, date) => dispatch(getShows(country, date)),
-  fetchFavList: authToken => dispatch(fetchFavList(authToken)), 
+  fetchFavList: authToken => dispatch(fetchFavList(authToken)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowList);
