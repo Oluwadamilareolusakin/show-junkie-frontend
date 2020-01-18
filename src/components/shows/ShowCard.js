@@ -14,7 +14,7 @@ const ShowCard = (props) => {
     <div className="show-card">
       { image
         ? <div className="show-image"><img alt="show-junkie" src={image.original} /></div>
-        : network && <div className="show-image blank-image column">{network.name}</div>}
+        : <div className="show-image blank-image column">{network && network.name ? network.name : ""}</div>}
       <div className="show-details">
         <div className="row name-rating">
           <Link to={`/show/:${name}`} onClick={() => storeId(id)}>
