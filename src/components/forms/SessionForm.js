@@ -17,23 +17,18 @@ class SessionForm extends React.Component {
   
   handleChange(e) {
     if (e.target.id === "name") {
-      console.log(e.target.value)
       this.setState({
         name: e.target.value,
       })
     }
 
     if (e.target.id === "email") {
-      console.log(e.target.value)
-
       this.setState({
         email: e.target.value,
       })
     }
 
     if (e.target.id === "password") {
-      console.log(e.target.value)
-
       this.setState({
         password: e.target.value,
       })

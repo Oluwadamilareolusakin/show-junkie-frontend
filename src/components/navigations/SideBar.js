@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/sidebar.scss';
 
 const SideBar = (props) => {
-  const { openModal } = props;
+  const { openModal, signout } = props;
   const handleModal = (event, modal) => {
     event.preventDefault();
     openModal(modal);
@@ -36,18 +36,22 @@ const SideBar = (props) => {
         <button type="button" className="no-bg-btn sidebar-link" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
       </div>
       <div className="sidebar-link-holder row">
-        <div className="logout" />
-        <Link exact to="/logout" className="sidebar-link">Logout</Link>
+        <div className="signout" />
+        <button className="no-bg-btn" onClick={() => signout()}>
+          Logout
+        </button>
       </div>
     </div>
   );
 };
 SideBar.defaultProps = {
   openModal: () => {},
+  signout: () => {},
 };
 
 SideBar.propTypes = {
   openModal: PropTypes.func,
+  signout: PropTypes.func,
 };
 
 

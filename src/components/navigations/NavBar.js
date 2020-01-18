@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../stylesheets/navigations/navbar.scss';
 
 const NavBar = (props) => {
-  const { openModal } = props;
+  const { openModal, signout } = props;
   const handleModal = (event, modal) => {
     event.preventDefault();
     openModal(modal);
@@ -43,7 +43,9 @@ const NavBar = (props) => {
           <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
         </div>
         <div>
-          <Link to="/logout" className="navbar-link">Logout</Link>
+          <button className="no-bg-btn" onClick={() => signout()}>
+            <Link to="/" className="navbar-link">Logout</Link>
+          </button>
         </div>
       </div>
     </nav>
@@ -52,10 +54,12 @@ const NavBar = (props) => {
 
 NavBar.defaultProps = {
   openModal: false,
+  signout: () => {},
 };
 
 NavBar.propTypes = {
   openModal: PropTypes.func,
+  signout: PropTypes.func,
 };
 
 

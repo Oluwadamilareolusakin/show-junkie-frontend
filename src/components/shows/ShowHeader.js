@@ -13,8 +13,9 @@ const ShowHeader = (props) => {
   summary = summary.replace(/<\/?[^>]+>/gi, '');
   const { time, days } = schedule;
   const { average } = rating;
-  const { id, networkName, country } = network;
-  const { code } = country;
+  const networkName = network ? network.networkName : "Unknown"
+  const country  = network ? network.country : "Unknown";
+  const code = country ? country.code : "Unknown";
   const { original } = image;
   const showImageStyle = {
     backgroundImage: `url(${original})`,
@@ -28,7 +29,7 @@ const ShowHeader = (props) => {
       <div className="show-right column">
         <div className="show-right-header">
           <div className="show-img" style={showImageStyle} />
-          <div>
+          <div className="show-details">
             <h1 className="show-name">
               {name}
               {' '}
@@ -49,18 +50,19 @@ const ShowHeader = (props) => {
               </div>
               <p className="show-country extra-detail">
     Country:
+                {' '}
                 {code}
               </p>
               <p className="show-language extra-detail">
     Language:
+                {' '}
                 {language}
               </p>
-              {networkName && (
               <p className="show-network extra-detail">
     TV Network:
+                {' '}
                 {networkName}
               </p>
-              ) }
             </div>
             <div className="show-extra-details row">
 
@@ -73,7 +75,7 @@ const ShowHeader = (props) => {
               </div>
               <div className="show-genres row">
                 {genres.forEach(genre => (
-                  <p key={`${genre}${id}`} className="show-genre">
+                  <p key={`${genre}`} className="show-genre">
                     {genre}
                   </p>
                 ))}

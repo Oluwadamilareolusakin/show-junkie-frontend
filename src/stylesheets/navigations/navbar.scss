@@ -3,7 +3,7 @@
 
 .navbar {
   background-color: $primary-purple;
-  padding: 2em;
+  padding: 1em 2em;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +55,7 @@
       text-decoration: none;
       margin-right: 1em;
       transition: .5s;
+      font-size: .8em;
     
       &:hover {
         color: $link-hover-grey; 

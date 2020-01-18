@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import SideBar from './navigations/Sidebar';
-import NavBar from './navigations/NavBar';
+import SideBar from '../containers/navigations/SideBar';
+import NavBar from '../containers/navigations/NavBar';
 import SignupPage from './signup/SignupPage';
 import Help from '../containers/modals/Help';
 import Feedback from '../containers/modals/Feedback';
@@ -32,24 +32,22 @@ const App = (props) => {
 
   const closeSideBar = () => {
     const sideBar = document.querySelector('.sidebar');
-    if (sideBar.classList.contains('open')) { sideBar.classList.toggle('open'); }
+    if (sideBar && sideBar.classList.contains('open')) { sideBar.classList.toggle('open'); }
   };
 
   document.addEventListener('click', closeSideBar);
 
   return (
     <Router>
-      <SideBar openModal={modal => openModal(modal)} />
-      <NavBar openModal={modal => openModal(modal)} />
+      { loggedIn && <SideBar openModal={modal => openModal(modal)} /> }
+      { loggedIn && <NavBar openModal={modal => openModal(modal)} /> }
       <Help closeModal={modal => closeModal(modal)} />
       <Feedback closeModal={modal => closeModal(modal)} />
       <Route exact path="/" component={loggedIn ? HomePage : LoginPage} />
-      <Route path="/show/:showname" component={Show} />
-      <Route path="/login" component={LoginPage} />
+      <Route path="/show/:showname" component={loggedIn ? Show : LoginPage} />
       <Route path="/Signup" component={SignupPage} />
-      <Route path="/logout" component={LoginPage} />
-      <Route path="/episodes" component={EpisodeList} />
-      <Route path="/seasons" component={SeasonList} />
+      <Route path="/episodes" component={loggedIn ? EpisodeList : LoginPage} />
+      <Route path="/seasons" component={loggedIn ? SeasonList : LoginPage} />
     </Router>
   );
 };
