@@ -34,7 +34,7 @@ const NavBar = (props) => {
           <Link to="/your-shows" className="navbar-link">Your Shows</Link>
         </div>
         <div>
-          <Link to="#" className="navbar-link accent-link">COMING SOON!: Profile</Link>
+          <p className="navbar-link accent-link">COMING SOON!: Profile</p>
         </div>
         <div>
           <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={event => handleModal(event, helpModal())}>Help</button>

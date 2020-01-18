@@ -25,7 +25,7 @@ const SideBar = (props) => {
       </div>
       <div className="sidebar-link-holder row">
         <div className="profile" />
-        <Link to="#" className="sidebar-link accent-link">COMING SOON!: Profile</Link>
+        <p className="sidebar-link accent-link">COMING SOON!: Profile</p>
       </div>
       <div className="sidebar-link-holder row">
         <div className="help" />
