@@ -1,4 +1,4 @@
-const AUTHENTICATE = "AUTHENTICATE";
+const AUTHENTICATE = 'AUTHENTICATE';
 const LOGOUT = 'LOGOUT';
 
 const authenticationReducer = (state = {}, action) => {
@@ -8,7 +8,6 @@ const authenticationReducer = (state = {}, action) => {
     }
 
     case LOGOUT: {
-      console.log('logout g')
       return { loggedIn: false };
     }
 

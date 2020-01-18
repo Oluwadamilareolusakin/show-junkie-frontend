@@ -37,7 +37,7 @@ const SideBar = (props) => {
       </div>
       <div className="sidebar-link-holder row">
         <div className="signout" />
-        <button className="no-bg-btn" onClick={() => signout()}>
+        <button type="button" className="no-bg-btn" onClick={() => signout()}>
           Logout
         </button>
       </div>

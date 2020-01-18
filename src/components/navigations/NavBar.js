@@ -43,7 +43,7 @@ const NavBar = (props) => {
           <button type="button" className="navbar-link nav-btn no-bg-btn" onClick={event => handleModal(event, feedbackModal())}>Feedback</button>
         </div>
         <div>
-          <button className="no-bg-btn" onClick={() => signout()}>
+          <button type="button" className="no-bg-btn" onClick={() => signout()}>
             <Link to="/" className="navbar-link">Logout</Link>
           </button>
         </div>

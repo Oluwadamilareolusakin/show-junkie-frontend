@@ -10,28 +10,28 @@ class SessionForm extends React.Component {
       name: null,
       email: null,
       password: null,
-    }
+    };
     this.submitForm = this.submitForm.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  
+
   handleChange(e) {
-    if (e.target.id === "name") {
+    if (e.target.id === 'name') {
       this.setState({
         name: e.target.value,
-      })
+      });
     }
 
-    if (e.target.id === "email") {
+    if (e.target.id === 'email') {
       this.setState({
         email: e.target.value,
-      })
+      });
     }
 
-    if (e.target.id === "password") {
+    if (e.target.id === 'password') {
       this.setState({
         password: e.target.value,
-      })
+      });
     }
   }
 
@@ -44,8 +44,8 @@ class SessionForm extends React.Component {
     if (name) {
       formData.set('name', name);
     }
-    handleSubmit(formData)
-  };
+    handleSubmit(formData);
+  }
 
   render() {
     const {
@@ -56,9 +56,9 @@ class SessionForm extends React.Component {
       <div className="session-form-holder column">
         <h2>{formName}</h2>
         <form>
-          { signUp && <input type="text" id="name" placeholder="Full Name" className="text-input" onChange={this.handleChange}/> }
-          <input type="text" id="email" placeholder="Email Address" className="text-input" onChange={this.handleChange}/>
-          <input type="text" id="password" placeholder="Password" className="text-input" onChange={this.handleChange}/>
+          { signUp && <input type="text" id="name" placeholder="Full Name" className="text-input" onChange={this.handleChange} /> }
+          <input type="text" id="email" placeholder="Email Address" className="text-input" onChange={this.handleChange} />
+          <input type="text" id="password" placeholder="Password" className="text-input" onChange={this.handleChange} />
           <button type="button" className="btn session-btn" onClick={() => this.submitForm()}>
             {buttonName}
           </button>
@@ -69,7 +69,7 @@ class SessionForm extends React.Component {
       </div>
     );
   }
-};
+}
 
 SessionForm.defaultProps = {
   handleSubmit: () => {},

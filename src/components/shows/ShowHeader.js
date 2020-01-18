@@ -13,9 +13,9 @@ const ShowHeader = (props) => {
   summary = summary.replace(/<\/?[^>]+>/gi, '');
   const { time, days } = schedule;
   const { average } = rating;
-  const networkName = network ? network.networkName : "Unknown"
-  const country  = network ? network.country : "Unknown";
-  const code = country ? country.code : "Unknown";
+  const networkName = network ? network.networkName : 'Unknown';
+  const country = network ? network.country : 'Unknown';
+  const code = country ? country.code : 'Unknown';
   const { original } = image;
   const showImageStyle = {
     backgroundImage: `url(${original})`,
