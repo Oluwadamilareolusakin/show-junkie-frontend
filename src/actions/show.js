@@ -88,7 +88,8 @@ export const favourite = (showId, authToken) => async (dispatch) => {
         Authorization: authToken,
         'Content-Type': 'application/json',
       },
-    },);
+    }
+  );
   dispatch(recieveFavList([showId]));
 };
 
@@ -99,6 +100,7 @@ export const unfavourite = (showId, favouriteId, authToken) => async (dispatch) 
         Authorization: authToken,
         'Content-Type': 'application/json',
       },
-    },);
+    }
+  );
   dispatch(fetchFavList(authToken));
 };
