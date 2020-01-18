@@ -11,7 +11,7 @@ const ShowHeader = (props) => {
     schedule,
   } = show;
   let { summary } = show;
-  summary = summary.replace(/<\/?[^>]+>/gi, '');
+  summary = summary ? summary.replace(/<\/?[^>]+>/gi, '') : "";
   const { time, days } = schedule;
   const { average } = rating;
   const networkName = network ? network.networkName : 'Unknown';
