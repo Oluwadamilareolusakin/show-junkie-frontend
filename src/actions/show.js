@@ -6,6 +6,7 @@ const RECIEVE_SHOWS = 'RECIEVE_SHOWS';
 const RECIEVE_SEASONS = 'RECIEVE_SEASONS';
 const RECIEVE_SHOW = 'RECIEVE_SHOW';
 const RECIEVE_FAV_LIST = 'RECIEVE_FAV_LIST';
+const DELETE_FAV = "DELETE_FAV";
 const STORE_SHOW_ID = 'STORE_SHOW_ID';
 
 const recieveShows = shows => ({
@@ -17,6 +18,12 @@ const recieveFavList = list => ({
   type: RECIEVE_FAV_LIST,
   list,
 });
+
+const deleteFav = showId => ({
+  type: DELETE_FAV,
+  showId,
+});
+
 
 const recieveSeasons = seasons => ({
   type: RECIEVE_SEASONS,
@@ -75,11 +82,11 @@ export const fetchFavList = authToken => async (dispatch) => {
   const request = await Axios.get(`${API_BASE_URL}/favourites`, 
                                   {headers: {Authorization: authToken}});
                                   // dispatch(recieveFavList())
-                                  console.log(request.error);
+  // const favourites = request.data.map(fav => )
+  //                                 console.log(request);
 };
 
 export const favourite = (showId, authToken) => async (dispatch) => { 
-  console.log(authToken)
   const request = await Axios.post(`${API_BASE_URL}/favourites`, 
                                     {show_id: showId  },
                                     { headers: 
@@ -89,7 +96,20 @@ export const favourite = (showId, authToken) => async (dispatch) => {
                                         }
                                     }
                                   );
-                                  console.log(request);
                                   dispatch(recieveFavList([showId]));
+
+};
+
+export const unfavourite = (showId, favouriteId, authToken) => async (dispatch) => { 
+  const request = await Axios.delete(`${API_BASE_URL}/favourites/${favouriteId}`, 
+                                    {id: favouriteId  },
+                                    { headers: 
+                                        {
+                                          'Authorization': authToken,
+                                          'Content-Type': 'application/json'
+                                        }
+                                    }
+                                  );
+                                  dispatch(deleteFav(showId));
 
 };
