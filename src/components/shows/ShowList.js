@@ -5,8 +5,11 @@ import '../../stylesheets/show/show.scss';
 
 class ShowList extends React.Component {
   componentDidMount() {
-    const { country, date, fetchShows } = this.props;
+    const { country, date, 
+            fetchShows,
+            fetchFavList, authToken } = this.props;
     fetchShows(country, date);
+    fetchFavList(authToken)
   }
 
   render() {

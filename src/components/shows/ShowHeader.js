@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes, { oneOfType } from 'prop-types';
 import '../../stylesheets/show/show_header.scss';
+import FavouriteButton from '../../containers/shows/FavouriteButton';
 
 const ShowHeader = (props) => {
   const { show } = props;
@@ -103,6 +104,8 @@ const ShowHeader = (props) => {
           </div>
 
         </div>
+
+        <FavouriteButton />
 
         <div className="summary">
           <h2>Summary</h2>
