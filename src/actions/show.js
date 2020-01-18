@@ -94,9 +94,8 @@ export const favourite = (showId, authToken) => async (dispatch) => {
 };
 
 export const unfavourite = (showId, favouriteId, authToken) => async (dispatch) => {
-  const request = await Axios.delete(`${API_BASE_URL}/favourites/${favouriteId}`,
-    { id: favouriteId },
-    {
+  const request = await Axios.delete(`${API_BASE_URL}/favourites/${favouriteId}`, { id: 
+    favouriteId }, {
       headers: {
         Authorization: authToken,
         'Content-Type': 'application/json',
