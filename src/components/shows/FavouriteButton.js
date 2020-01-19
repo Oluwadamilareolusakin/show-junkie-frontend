@@ -21,16 +21,16 @@ class FavouriteButton extends React.Component {
 
   removeFromFavs(event, showId) {
     event.preventDefault();
-    const { authToken, favourites } = this.props;
+    const { authToken, favList } = this.props;
     const { unfavourite } = this.props;
-    const favouriteId = favourites[showId];
+    const favouriteId = favList[showId];
     unfavourite(favouriteId, authToken);
   }
 
   render() {
-    const { showId, favourites } = this.props;
+    const { showId, favList } = this.props;
     return (
-      favourites[showId]
+      favList[showId]
         ? (
           <button
             type="button"
@@ -58,7 +58,7 @@ FavouriteButton.defaultProps = {
   favourite: () => {},
   unfavourite: () => {},
   fetchFavList: () => {},
-  favourites: [],
+  favList: [],
   showId: 1,
   authToken: '',
 };
@@ -67,7 +67,7 @@ FavouriteButton.propTypes = {
   favourite: PropTypes.func,
   fetchFavList: PropTypes.func,
   unfavourite: PropTypes.func,
-  favourites: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
+  favList: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
   showId: PropTypes.number,
   authToken: PropTypes.string,
 };
