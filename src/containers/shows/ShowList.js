@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { getShows, fetchFavList } from '../../actions/show';
+import { getShows } from '../../actions/show';
+import { fetchFavList } from '../../actions/favourites';
 import ShowList from '../../components/shows/ShowList';
 
 
