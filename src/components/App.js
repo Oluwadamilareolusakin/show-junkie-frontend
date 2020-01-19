@@ -12,6 +12,7 @@ import LoginPage from './login/LoginPage';
 import HomePage from './homepage/Homepage';
 import EpisodeList from '../containers/shows/EpisodeList';
 import SeasonList from '../containers/shows/SeasonList';
+import FavouriteList from '../containers/shows/FavouriteList';
 import { resetCreated } from '../actions/shared';
 
 
@@ -46,6 +47,7 @@ const App = (props) => {
       <Route exact path="/" component={loggedIn ? HomePage : LoginPage} />
       <Route path="/show/:showname" component={loggedIn ? Show : LoginPage} />
       <Route path="/Signup" component={SignupPage} />
+      <Route path="/your-shows" component={loggedIn ? FavouriteList : LoginPage} />
       <Route path="/episodes" component={loggedIn ? EpisodeList : LoginPage} />
       <Route path="/seasons" component={loggedIn ? SeasonList : LoginPage} />
     </Router>
