@@ -59,4 +59,3 @@ export const fetchFavourites = favList => (dispatch) => {
   });
   dispatch(recieveFavourites(favourites));
 };
- 

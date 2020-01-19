@@ -5,11 +5,11 @@ import '../../stylesheets/show/show.scss';
 
 class FavouriteList extends React.Component {
   componentDidMount() {
-    const { 
-      favList, 
-      fetchFavourites, 
-      fetchFavList, 
-      authToken 
+    const {
+      favList,
+      fetchFavourites,
+      fetchFavList,
+      authToken,
     } = this.props;
 
     fetchFavList(authToken);
@@ -38,7 +38,7 @@ FavouriteList.defaultProps = {
   fetchFavList: () => {},
   favourites: {},
   fetchedFavourites: false,
-  authToken: "",
+  authToken: '',
 };
 
 FavouriteList.propTypes = {
