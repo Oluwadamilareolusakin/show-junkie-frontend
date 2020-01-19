@@ -5,6 +5,7 @@ const STORE_SHOW_ID = 'STORE_SHOW_ID';
 const RECIEVE_FAV_LIST = 'RECIEVE_FAV_LIST';
 const RECIEVE_EPISODES = 'RECIEVE_EPISODES';
 
+
 const showReducer = (state = {}, action) => {
   switch (action.type) {
     case RECIEVE_SHOWS: {
@@ -28,7 +29,7 @@ const showReducer = (state = {}, action) => {
     }
 
     case RECIEVE_FAV_LIST: {
-      return { ...state, favourites: action.favourites };
+      return { ...state, favourites: action.list };
     }
 
     default:

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { favourite, unfavourite } from '../../actions/show';
+import { favourite, unfavourite, fetchFavList } from '../../actions/show';
 import FavouriteButton from '../../components/shows/FavouriteButton';
 
 const mapStateToProps = state => ({
@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   favourite: (id, authToken) => dispatch(favourite(id, authToken)),
+  fetchFavList: authToken => dispatch(fetchFavList(authToken)),
   unfavourite: (showId, favouriteId, authToken) => dispatch(unfavourite(showId,
     favouriteId, authToken)),
 });

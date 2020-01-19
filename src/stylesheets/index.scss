@@ -18,6 +18,10 @@
   width: 5px;
 }
 
+.accent-link {
+  color: $accent-green;
+}
+
 .row {
   display: flex;
   flex-flow: row nowrap;
