@@ -6,7 +6,7 @@ const ShowCard = (props) => {
   const { data, storeId } = props;
   const { show } = data;
   const {
-    id, name, rating, runtime, genres, image, network,
+    id, name, rating, runtime, genres, image,
   } = show;
   const { average } = rating;
 
