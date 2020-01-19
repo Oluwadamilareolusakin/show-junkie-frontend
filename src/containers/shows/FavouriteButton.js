@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { favourite, unfavourite, fetchFavList } from '../../actions/show';
+import { favourite, unfavourite, fetchFavList } from '../../actions/favourites';
 import FavouriteButton from '../../components/shows/FavouriteButton';
 
 const mapStateToProps = state => ({
-  favourites: state.showReducer.favourites,
+  favList: state.favouritesReducer.favList,
   showId: state.showReducer.showId,
   authToken: state.authenticationReducer.authToken,
 });
