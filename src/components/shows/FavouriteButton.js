@@ -7,17 +7,17 @@ class FavouriteButton extends React.Component {
     this.addToFavs = this.addToFavs.bind(this);
     this.removeFromFavs = this.removeFromFavs.bind(this);
   }
-  
+
   componentDidMount() {
-    const { authToken } = this.props;
-    this.props.fetchFavList(authToken);
+    const { authToken, fetchFavList } = this.props;
+    fetchFavList(authToken);
   }
-  
+
   addToFavs(event, showId) {
     event.preventDefault();
     const { authToken, favourite } = this.props;
     favourite(showId, authToken);
-  };
+  }
 
   removeFromFavs(event, showId) {
     event.preventDefault();
@@ -25,9 +25,9 @@ class FavouriteButton extends React.Component {
     const { unfavourite } = this.props;
     const favouriteId = favourites[showId];
     unfavourite(favouriteId, authToken);
-  };
+  }
 
-  render () {
+  render() {
     const { showId, favourites } = this.props;
     return (
       favourites[showId]
@@ -40,7 +40,7 @@ class FavouriteButton extends React.Component {
             Unsubscribe
           </button>
         )
-  
+
         : (
           <button
             type="button"
@@ -52,24 +52,22 @@ class FavouriteButton extends React.Component {
         )
     );
   }
-};
+}
 
 FavouriteButton.defaultProps = {
   favourite: () => {},
-  removeFromFavs: () => {},
+  unfavourite: () => {},
   fetchFavList: () => {},
   favourites: [],
   showId: 1,
   authToken: '',
-  tempFavs: [],
 };
 
 FavouriteButton.propTypes = {
   favourite: PropTypes.func,
   fetchFavList: PropTypes.func,
-  removeFromFavs: PropTypes.func,
+  unfavourite: PropTypes.func,
   favourites: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
-  tempFavs: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
   showId: PropTypes.number,
   authToken: PropTypes.string,
 };
