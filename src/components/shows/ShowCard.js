@@ -23,7 +23,7 @@ const ShowCard = (props) => {
       }
       <div className="show-details">
         <div className="row name-rating">
-          <Link to={`/show/:${name}`} onClick={() => storeId(id)}>
+          <Link to={`/show/${name}`} onClick={() => storeId(id)}>
             <h3>{name}</h3>
           </Link>
           <p className={average > 5 ? 'good-rating' : 'poor-rating'}>{average || 'No rating'}</p>
