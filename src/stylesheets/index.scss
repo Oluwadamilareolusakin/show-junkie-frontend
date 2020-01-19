@@ -32,6 +32,10 @@
   flex-flow: column nowrap;
 }
 
+.logo {
+  font-family: $logo-font;
+}
+
 .no-bg-btn{
   border: none;
   background: 0 0;

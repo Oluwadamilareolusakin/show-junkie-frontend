@@ -22,8 +22,8 @@ const NavBar = (props) => {
           onClick={event => handleModal(event, sideBar())}
           className="mobile-menu no-bg-btn"
         />
-        <Link to="/" className="logo">
-          <h3>Show Junkie</h3>
+        <Link to="/">
+          <h3 className="logo">Show Junkie</h3>
         </Link>
       </div>
       <div className="nav-right row">

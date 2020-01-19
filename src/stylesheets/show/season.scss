@@ -10,7 +10,7 @@
   }
   
   @media #{$large-mq} {
-    width: 33%;
+    width: 30%;
   }
   
   .season-image {
@@ -51,14 +51,15 @@
   .blank-image {
     height: 300px;
     width: 100%;
-    background-image: $accent-gradient-purple;
+    background-image: $primary-gradient-grey;
     justify-content: center;
     align-items: center;
     color: white;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-  }
 
-  .season-right {
+    .logo {
+      font-size: 2em;
+    }
   }
 }
