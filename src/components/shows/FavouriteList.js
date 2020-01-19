@@ -4,9 +4,14 @@ import ShowCard from '../../containers/shows/ShowCard';
 import '../../stylesheets/show/show.scss';
 
 class FavouriteList extends React.Component {
-  
   componentDidMount() {
-    const { favList, fetchFavourites, fetchFavList, authToken } = this.props;
+    const { 
+      favList, 
+      fetchFavourites, 
+      fetchFavList, 
+      authToken 
+    } = this.props;
+
     fetchFavList(authToken);
     fetchFavourites(favList);
   }
@@ -27,19 +32,22 @@ class FavouriteList extends React.Component {
   }
 }
 
-
 FavouriteList.defaultProps = {
   favList: [],
   fetchFavourites: () => {},
+  fetchFavList: () => {},
   favourites: {},
   fetchedFavourites: false,
+  authToken: "",
 };
 
 FavouriteList.propTypes = {
   favList: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
   favourites: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
   fetchFavourites: PropTypes.func,
+  fetchFavList: PropTypes.func,
   fetchedFavourites: PropTypes.bool,
+  authToken: PropTypes.string,
 };
 
 export default FavouriteList;

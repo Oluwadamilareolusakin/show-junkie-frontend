@@ -50,12 +50,13 @@ export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
   dispatch(fetchFavList(authToken));
 };
 
-export const fetchFavourites = favList => dispatch => {
-  let favourites = [];
+export const fetchFavourites = favList => (dispatch) => {
+  const favourites = [];
   Object.keys(favList).forEach(async (key) => {
     const show = await fetch(`${TV_MAZE_URL}/shows/${key}`);
     const data = await show.json();
     favourites.push(data);
   });
   dispatch(recieveFavourites(favourites));
-} 
+};
+ 
