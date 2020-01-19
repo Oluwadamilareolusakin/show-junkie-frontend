@@ -19,7 +19,7 @@ class ShowList extends React.Component {
     const { shows, fetchedShows } = this.props;
     return (
       <div className="shows row">
-        { fetchedShows && shows.map(data => <ShowCard key={data.id} data={data} />) }
+        { fetchedShows && shows.map(data => <ShowCard key={data.id} data={data.show} />) }
       </div>
     );
   }

@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 const ShowCard = (props) => {
   const { data, storeId } = props;
-  const { show } = data;
   const {
     id, name, rating, runtime, genres, image,
-  } = show;
+  } = data;
   const { average } = rating;
 
   return (
