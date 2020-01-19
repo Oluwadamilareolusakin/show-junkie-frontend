@@ -11,15 +11,17 @@ const Season = (props) => {
   return (
     <div className="season">
       {
-        image
-          ?
-          (<img
+        image ? (
+          <img
             alt="show-junkie"
             className="season-image"
             src={image && image.original}
-          />) : (<div className="blank-image column">
-          <p className="logo">ShowJunkie</p>
-        </div>)
+          />
+        ) : (
+          <div className="blank-image column">
+            <p className="logo">ShowJunkie</p>
+          </div>
+        )
       }
       <div className="season-right column">
         <p className="season-number">
