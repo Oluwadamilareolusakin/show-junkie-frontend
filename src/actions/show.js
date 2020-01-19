@@ -76,12 +76,12 @@ export const fetchFavList = authToken => async (dispatch) => {
   const request = await Axios.get(`${API_BASE_URL}/favourites`,
     { headers: { Authorization: authToken } });
   const favourites = {};
-  request.data.forEach(favourite => { favourites[favourite.show_id] = favourite.id });
+  request.data.forEach((favourite) => { favourites[favourite.show_id] = favourite.id });
   dispatch(recieveFavList(favourites));
 };
 
 export const favourite = (showId, authToken) => async (dispatch) => {
-  const request = await Axios.post(
+  await Axios.post(
     `${API_BASE_URL}/favourites`, { show_id: showId }, {
       headers: {
         Authorization: authToken,
