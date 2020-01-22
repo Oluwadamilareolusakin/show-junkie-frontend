@@ -4,7 +4,6 @@ import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
 import '../../stylesheets/modals/loading.scss';
 import * as legoData from './legoloading.json';
-import * as doneData from './doneloading.json';
 
 const defaultOptions = {
   loop: true,
@@ -15,32 +14,25 @@ const defaultOptions = {
   },
 };
 
-const defaultOptions2 = {
-  loop: false,
-  autoplay: true,
-  animationData: doneData.default,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
-  },
-};
-
 const Loading = (props) => {
   const { loadingAction, loading } = props;
   return (
     <FadeIn>
       { loading && 
-        <div className="row loading-modal">
-          <div className="row loading-items">
-            <h1>
-              { loadingAction }
-            </h1>
-            <Lottie
-              options={defaultOptions}
-              width={120}
-              height={120}
-            />
+        (
+          <div className="row loading-modal">
+            <div className="row loading-items">
+              <h1>
+                { loadingAction }
+              </h1>
+              <Lottie
+                options={defaultOptions}
+                width={120}
+                height={120}
+              />
+            </div>
           </div>
-        </div>
+        )
       }
     </FadeIn>
   );
