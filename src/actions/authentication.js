@@ -16,8 +16,9 @@ export const login = formData => async (dispatch) => {
   dispatch(loading('Signing you in'));
   const request = await Axios.post(`${API_BASE_URL}/auth/login`, formData);
   const { data } = request;
-  const { authToken, user } = data;
-  dispatch(receiveAuthToken(authToken, user));
+  const { user } = data;
+  const authToken = data.auth_token;
+  dispatch(receiveAuthToken(auth_token, user));
   dispatch(finished());
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { oneOfType } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ShowCard = (props) => {
@@ -19,8 +19,8 @@ const ShowCard = (props) => {
         <div className="show-image blank-image column">
           <p className="logo">ShowJunkie</p>
         </div>
-      )
-      }
+      )}
+      
       <div className="show-details">
         <div className="row name-rating">
           <Link to={`/show/${name}`} onClick={() => storeId(id)}>
@@ -46,7 +46,7 @@ ShowCard.defaultProps = {
 };
 
 ShowCard.propTypes = {
-  data: PropTypes.arrayOf(oneOfType(['strings'])),
+  data: PropTypes.objectOf(String),
   storeId: PropTypes.func,
 };
 

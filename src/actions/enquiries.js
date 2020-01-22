@@ -16,7 +16,7 @@ export const createEnquiry = (message, authToken) => async (dispatch) => {
           Authorization: authToken,
           'Content-Type': 'application/json',
         },
-    },);
+      });
     postRequest.then(dispatch(create()));
     dispatch(finished());
   } catch (error) {

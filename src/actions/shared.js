@@ -16,6 +16,6 @@ export const loading = loadingAction => ({
   loadingAction,
 });
 
-export const finished = ({
+export const finished = () => ({
   type: FINISHED,
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { oneOfType } from 'prop-types';
+import PropTypes from 'prop-types';
 import '../../stylesheets/show/show_header.scss';
 import FavouriteButton from '../../containers/shows/FavouriteButton';
 
@@ -123,7 +123,7 @@ ShowHeader.defaultProps = {
 };
 
 ShowHeader.propTypes = {
-  show: PropTypes.arrayOf(oneOfType(['strings'])),
+  show: PropTypes.objectOf(String),
 };
 
 export default ShowHeader;
