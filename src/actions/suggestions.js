@@ -17,11 +17,12 @@ export const createSuggestion = (message, authToken) => async (dispatch) => {
           'Content-Type': 'applications/json',
         },
       });
+    setTimeout(() => {
+      dispatch(finished());
+    }, 2000);
     postRequest.then(dispatch(create()));
-    dispatch(finished());
   } catch (error) {
     // handle errors
-    dispatch(finished());
   }
 };
 

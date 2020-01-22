@@ -2,6 +2,7 @@ import React from 'react';
 import FadeIn from 'react-fade-in';
 import Lottie from 'react-lottie';
 import PropTypes from 'prop-types';
+import '../../stylesheets/modals/loading.scss';
 import * as legoData from './legoloading.json';
 import * as doneData from './doneloading.json';
 
@@ -26,29 +27,22 @@ const defaultOptions2 = {
 const Loading = (props) => {
   const { loadingAction, loading } = props;
   return (
-    <div className="modal">
-      <FadeIn>
-        { loading ? (
-          <div className="row">
-            { loadingAction }
+    <FadeIn>
+      { loading && 
+        <div className="row loading-modal">
+          <div className="row loading-items">
+            <h1>
+              { loadingAction }
+            </h1>
             <Lottie
               options={defaultOptions}
               width={120}
               height={120}
             />
           </div>
-        ) : (
-          <div className="row">
-            { loadingAction }
-            <Lottie
-              options={defaultOptions2}
-              width={120}
-              height={120}
-            />
-          </div>
-        )}
-      </FadeIn>
-    </div>
+        </div>
+      }
+    </FadeIn>
   );
 };
 

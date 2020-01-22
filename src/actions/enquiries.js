@@ -6,10 +6,10 @@ const API_BASE_URL = 'https://api-showjunkie.herokuapp.com';
 
 
 export const createEnquiry = (message, authToken) => async (dispatch) => {
+  dispatch(loading('Sending Enquiry'));
   try {
     const form = new FormData();
     form.set('message', message);
-    dispatch(loading('Sending Enquiry'));
     const postRequest = await Axios.post(`${API_BASE_URL}/enquiries`, form,
       {
         headers: {
@@ -18,10 +18,15 @@ export const createEnquiry = (message, authToken) => async (dispatch) => {
         },
       });
     postRequest.then(dispatch(create()));
-    dispatch(finished());
+    setTimeout(() => {
+      dispatch(finished());
+    }, 2000);
   } catch (error) {
     // handle Errors
   }
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
 };
 
 const recieveEnquiries = enquiries => ({

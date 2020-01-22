@@ -29,8 +29,10 @@ export const getShows = (country, date) => async (dispatch) => {
     dispatch(loading('Loading today\'s shows'));
     const shows = await fetch(`${TV_MAZE_URL}/schedule?country=${country}&date=${date}`);
     const response = await shows.json();
+    setTimeout(() => {
+      dispatch(finished());
+    }, 2000);
     dispatch(recieveShows(response));
-    dispatch(finished());
   } catch (error) {
     // handle errors
   }
@@ -50,8 +52,10 @@ export const fetchSeasons = id => async (dispatch) => {
   dispatch(loading('Loading all seasons'));
   const seasonsData = await fetch(`${TV_MAZE_URL}/shows/${id}/seasons`);
   const seasons = await seasonsData.json();
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
   dispatch(recieveSeasons(seasons));
-  dispatch(finished());
 };
 
 export const fetchEpisodes = id => async (dispatch) => {
@@ -59,7 +63,9 @@ export const fetchEpisodes = id => async (dispatch) => {
   const episodesData = await fetch(`${TV_MAZE_URL}/shows/${id}/episodes`);
   const episodes = await episodesData.json();
   dispatch(recieveEpisodes(episodes));
-  dispatch(finished());
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
 };
 
 export const getShow = showId => async (dispatch) => {
@@ -67,8 +73,10 @@ export const getShow = showId => async (dispatch) => {
     dispatch(loading('Loading show'));
     const show = await fetch(`${TV_MAZE_URL}/shows/${showId}`);
     const data = await show.json();
+    setTimeout(() => {
+      dispatch(finished());
+    }, 2000);
     dispatch(recieveShow(data));
-    dispatch(finished());
   } catch (error) {
     // handle errors
   }

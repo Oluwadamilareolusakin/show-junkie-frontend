@@ -28,6 +28,7 @@ export const fetchFavList = authToken => async (dispatch) => {
 };
 
 export const favourite = (showId, authToken) => async (dispatch) => {
+  dispatch(loading('Adding show to your favourites'));
   await Axios.post(
     `${API_BASE_URL}/favourites`, { show_id: showId }, {
       headers: {
@@ -37,9 +38,13 @@ export const favourite = (showId, authToken) => async (dispatch) => {
     },
   );
   dispatch(fetchFavList(authToken));
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
 };
 
 export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
+  dispatch(loading('Unsubscribing'));
   await Axios.delete(
     `${API_BASE_URL}/favourites/${favouriteId}`, {
       headers: {
@@ -49,6 +54,9 @@ export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
     },
   );
   dispatch(fetchFavList(authToken));
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
 };
 
 export const fetchFavourites = favList => (dispatch) => {
@@ -60,5 +68,7 @@ export const fetchFavourites = favList => (dispatch) => {
     favourites.push(data);
   });
   dispatch(recieveFavourites(favourites));
-  dispatch(finished());
+  setTimeout(() => {
+    dispatch(finished());
+  }, 2000);
 };
