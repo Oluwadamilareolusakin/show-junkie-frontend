@@ -5,9 +5,10 @@
   background: $primary-gradient-grey;
   border-radius: 5px;
   color: white;
-  margin: .5em;
+  margin: 1em 0;
   
   @media #{$large-mq} {
+    margin: .5em;
     width: 48%;
   }
 
@@ -34,7 +35,6 @@
     .season-number {
       margin-right: 1em;
       background-color: $accent-purple;
-      width: 10%;
     }
 
     .season-number, .episode-number {
@@ -53,11 +53,20 @@
     color: black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding: 1em;
-    // margin: 1em 0;
+    padding: .5em;
+    font-size: .7em;
+     
+    @media #{$large-mq} {
+      padding: 1em;
+      margin: 1em 0;
+    }
 
     p{
-      margin-right: 1em;
+      margin-right: .5em;
+      
+      @media #{$large-mq} {
+        margin-right: 1em;
+      }
     }
   }
 }
