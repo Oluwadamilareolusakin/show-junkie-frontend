@@ -32,8 +32,8 @@ class Help extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { message } = this.state;
-    const { submitEnquiry } = this.props;
-    submitEnquiry(message);
+    const { submitEnquiry, authToken } = this.props;
+    submitEnquiry(message, authToken);
   }
 
 
@@ -65,6 +65,7 @@ Help.defaultProps = {
   resetCreated: () => {},
   submitEnquiry: () => {},
   closeModal: () => {},
+  authToken: '',
 };
 
 Help.propTypes = {
@@ -72,6 +73,7 @@ Help.propTypes = {
   resetCreated: PropTypes.func,
   submitEnquiry: PropTypes.func,
   closeModal: PropTypes.func,
+  authToken: PropTypes.string,
 };
 
 export default Help;

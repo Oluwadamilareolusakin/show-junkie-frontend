@@ -42,8 +42,8 @@ FavouriteList.defaultProps = {
 };
 
 FavouriteList.propTypes = {
-  favList: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
-  favourites: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  favList: PropTypes.objectOf(Object),
+  favourites: PropTypes.arrayOf(Object),
   fetchFavourites: PropTypes.func,
   fetchFavList: PropTypes.func,
   fetchedFavourites: PropTypes.bool,

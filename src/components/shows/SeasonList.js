@@ -30,7 +30,7 @@ SeasonList.defaultProps = {
 
 SeasonList.propTypes = {
   showId: PropTypes.number,
-  seasons: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  seasons: PropTypes.arrayOf(Object),
   fetchSeasons: PropTypes.func,
   fetchedSeasons: PropTypes.bool,
 };

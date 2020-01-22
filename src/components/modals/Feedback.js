@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ConfirmationModal from './Confirmation';
 
-
 class Feedback extends React.Component {
   constructor(props) {
     super(props);
@@ -33,8 +32,8 @@ class Feedback extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { message } = this.state;
-    const { submitSuggestion } = this.props;
-    submitSuggestion(message);
+    const { submitSuggestion, authToken } = this.props;
+    submitSuggestion(message, authToken);
   }
 
 
@@ -68,6 +67,7 @@ Feedback.defaultProps = {
   resetCreated: () => {},
   submitSuggestion: () => {},
   closeModal: () => {},
+  authToken: '',
 };
 
 Feedback.propTypes = {
@@ -75,6 +75,7 @@ Feedback.propTypes = {
   resetCreated: PropTypes.func,
   submitSuggestion: PropTypes.func,
   closeModal: PropTypes.func,
+  authToken: PropTypes.string,
 };
 
 export default Feedback;

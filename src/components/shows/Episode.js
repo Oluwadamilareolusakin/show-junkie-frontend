@@ -55,7 +55,7 @@ Episode.defaultProps = {
 };
 
 Episode.propTypes = {
-  episode: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  episode: PropTypes.objectOf(Object),
 };
 
 

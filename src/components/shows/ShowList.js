@@ -36,7 +36,7 @@ ShowList.defaultProps = {
 };
 
 ShowList.propTypes = {
-  shows: PropTypes.arrayOf(PropTypes.PropTypes.oneOfType(Object)),
+  shows: PropTypes.arrayOf(Object),
   fetchShows: PropTypes.func,
   fetchFavList: PropTypes.func,
   fetchedShows: PropTypes.bool,

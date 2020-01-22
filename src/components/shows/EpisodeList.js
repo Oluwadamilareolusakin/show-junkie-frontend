@@ -31,7 +31,7 @@ EpisodeList.defaultProps = {
 
 EpisodeList.propTypes = {
   showId: PropTypes.number,
-  episodes: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  episodes: PropTypes.arrayOf(Object),
   fetchEpisodes: PropTypes.func,
   fetchedEpisodes: PropTypes.bool,
 };
