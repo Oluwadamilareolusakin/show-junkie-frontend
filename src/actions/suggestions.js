@@ -11,11 +11,12 @@ export const createSuggestion = (message, authToken) => async (dispatch) => {
     const form = new FormData();
     form.set('message', message);
     const postRequest = await Axios.post(`${API_BASE_URL}/suggestions`, form,
-      { headers: {
-        Authorization: authToken,
-        'Content-Type': 'applications/json',
-        }
-      } 
+      { 
+        headers: {
+          Authorization: authToken,
+          'Content-Type': 'applications/json',
+        },
+      },
     );
     postRequest.then(dispatch(create()));
     dispatch(finished());

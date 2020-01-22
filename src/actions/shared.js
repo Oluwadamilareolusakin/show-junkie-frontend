@@ -11,15 +11,11 @@ export const create = () => ({
   type: CREATE,
 });
 
-export const loading = (loadingAction) => {
-  return {
-    type: LOADING,
-    loadingAction,
-  }
-};
+export const loading = loadingAction => ({
+  type: LOADING,
+  loadingAction,
+});
 
-export const finished = () => {
-  return {
-    type: FINISHED,
-  }
-};
+export const finished = ({
+  type: FINISHED,
+});
