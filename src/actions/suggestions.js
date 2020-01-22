@@ -1,19 +1,27 @@
 import Axios from 'axios';
-import { create } from './shared';
+import { create, loading, finished } from './shared';
 
 const RECIEVE_SUGGESTIONS = 'RECIEVE_SUGGESTIONS';
 const API_BASE_URL = 'https://api-showjunkie.herokuapp.com';
 
 
-export const createSuggestion = (message, userId = 1) => async (dispatch) => {
+export const createSuggestion = (message, authToken) => async (dispatch) => {
+  dispatch(loading('Sending suggestion'));
   try {
     const form = new FormData();
     form.set('message', message);
-    form.set('user_id', userId);
-    const postRequest = await Axios.post(`${API_BASE_URL}/users/${userId}/suggestions`, form);
+    const postRequest = await Axios.post(`${API_BASE_URL}/suggestions`, form,
+      { headers: {
+        Authorization: authToken,
+        'Content-Type': 'applications/json',
+        }
+      } 
+    );
     postRequest.then(dispatch(create()));
+    dispatch(finished());
   } catch (error) {
     // handle errors
+    dispatch(finished());
   }
 };
 

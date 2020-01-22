@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { loading, finished } from './shared';
 
 const API_BASE_URL = 'https://api-showjunkie.herokuapp.com';
 const TV_MAZE_URL = 'https://api.tvmaze.com';
@@ -51,6 +52,7 @@ export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
 };
 
 export const fetchFavourites = favList => (dispatch) => {
+  dispatch(loading('Loading your favourite shows'))
   const favourites = [];
   Object.keys(favList).forEach(async (key) => {
     const show = await fetch(`${TV_MAZE_URL}/shows/${key}`);
@@ -58,4 +60,5 @@ export const fetchFavourites = favList => (dispatch) => {
     favourites.push(data);
   });
   dispatch(recieveFavourites(favourites));
+  dispatch(finished());
 };

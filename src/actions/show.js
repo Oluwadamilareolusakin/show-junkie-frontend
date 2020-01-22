@@ -1,3 +1,5 @@
+import { loading, finished } from './shared';
+
 const TV_MAZE_URL = 'https://api.tvmaze.com';
 
 const RECIEVE_EPISODES = 'RECIEVE_EPISODES';
@@ -24,9 +26,11 @@ const recieveEpisodes = episodes => ({
 
 export const getShows = (country, date) => async (dispatch) => {
   try {
+    dispatch(loading('Loading today\'s shows'));
     const shows = await fetch(`${TV_MAZE_URL}/schedule?country=${country}&date=${date}`);
     const response = await shows.json();
     dispatch(recieveShows(response));
+    dispatch(finished());
   } catch (error) {
     // handle errors
   }
@@ -43,22 +47,28 @@ export const storeShowId = showId => ({
 });
 
 export const fetchSeasons = id => async (dispatch) => {
+  dispatch(loading('Loading all seasons'));
   const seasonsData = await fetch(`${TV_MAZE_URL}/shows/${id}/seasons`);
   const seasons = await seasonsData.json();
   dispatch(recieveSeasons(seasons));
+  dispatch(finished());
 };
 
 export const fetchEpisodes = id => async (dispatch) => {
+  dispatch(loading('Loading all episodes'));
   const episodesData = await fetch(`${TV_MAZE_URL}/shows/${id}/episodes`);
   const episodes = await episodesData.json();
   dispatch(recieveEpisodes(episodes));
+  dispatch(finished());
 };
 
 export const getShow = showId => async (dispatch) => {
   try {
+    dispatch(loading('Loading show'));
     const show = await fetch(`${TV_MAZE_URL}/shows/${showId}`);
     const data = await show.json();
     dispatch(recieveShow(data));
+    dispatch(finished());
   } catch (error) {
     // handle errors
   }

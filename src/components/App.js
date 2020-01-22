@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import '../stylesheets/index.scss';  
 import SideBar from '../containers/navigations/SideBar';
 import NavBar from '../containers/navigations/NavBar';
 import SignupPage from './signup/SignupPage';
@@ -14,10 +15,10 @@ import EpisodeList from '../containers/shows/EpisodeList';
 import SeasonList from '../containers/shows/SeasonList';
 import FavouriteList from '../containers/shows/FavouriteList';
 import { resetCreated } from '../actions/shared';
-
+import Loading from '../containers/interactions/Loading';
 
 const App = (props) => {
-  const { loggedIn } = props;
+  const { loggedIn, done } = props;
 
   const openModal = (modal) => {
     modal.classList.toggle('open');
@@ -36,10 +37,11 @@ const App = (props) => {
     if (sideBar && sideBar.classList.contains('open')) { sideBar.classList.toggle('open'); }
   };
 
-  document.addEventListener('click', closeSideBar);
+  document.body.addEventListener('click', closeSideBar);
 
   return (
     <Router>
+      {!done && <Loading />}
       { loggedIn && <SideBar openModal={modal => openModal(modal)} /> }
       { loggedIn && <NavBar openModal={modal => openModal(modal)} /> }
       <Help closeModal={modal => closeModal(modal)} />
@@ -56,6 +58,7 @@ const App = (props) => {
 
 const mapStateToProps = state => ({
   loggedIn: state.authenticationReducer.loggedIn,
+  done: state.sharedReducer.done,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -65,11 +68,13 @@ const mapDispatchToProps = dispatch => ({
 App.defaultProps = {
   resetCreated: () => {},
   loggedIn: false,
+  done: false,
 };
 
 App.propTypes = {
   resetCreated: PropTypes.func,
   loggedIn: PropTypes.bool,
+  done: PropTypes.bool,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
