@@ -20,7 +20,7 @@ const ShowCard = (props) => {
           <p className="logo">ShowJunkie</p>
         </div>
       )}
-      
+
       <div className="show-details">
         <div className="row name-rating">
           <Link to={`/show/${name}`} onClick={() => storeId(id)}>

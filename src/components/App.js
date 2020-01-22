@@ -48,7 +48,7 @@ const App = (props) => {
       <Feedback closeModal={modal => closeModal(modal)} />
       <Route exact path="/" component={loggedIn ? HomePage : LoginPage} />
       <Route path="/show/:showname" component={loggedIn ? Show : LoginPage} />
-      <Route path="/Signup" component={loggedIn? HomePage : SignupPage} />
+      <Route path="/Signup" component={loggedIn ? HomePage : SignupPage} />
       <Route path="/your-shows" component={loggedIn ? FavouriteList : LoginPage} />
       <Route path="/episodes" component={loggedIn ? EpisodeList : LoginPage} />
       <Route path="/seasons" component={loggedIn ? SeasonList : LoginPage} />

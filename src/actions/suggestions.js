@@ -16,7 +16,7 @@ export const createSuggestion = (message, authToken) => async (dispatch) => {
           Authorization: authToken,
           'Content-Type': 'applications/json',
         },
-      },);
+      });
     postRequest.then(dispatch(create()));
     dispatch(finished());
   } catch (error) {
