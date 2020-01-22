@@ -18,7 +18,7 @@ export const login = formData => async (dispatch) => {
   const { data } = request;
   const { user } = data;
   const authToken = data.auth_token;
-  dispatch(receiveAuthToken(auth_token, user));
+  dispatch(receiveAuthToken(authToken, user));
   dispatch(finished());
 };
 
