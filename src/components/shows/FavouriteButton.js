@@ -67,7 +67,7 @@ FavouriteButton.propTypes = {
   favourite: PropTypes.func,
   fetchFavList: PropTypes.func,
   unfavourite: PropTypes.func,
-  favList: PropTypes.arrayOf(PropTypes.oneOfType([Number])),
+  favList: PropTypes.objectOf(Number),
   showId: PropTypes.number,
   authToken: PropTypes.string,
 };

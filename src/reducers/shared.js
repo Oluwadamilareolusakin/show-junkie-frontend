@@ -14,11 +14,15 @@ const sharedReducer = (state = {}, action) => {
     }
 
     case LOADING: {
-      return { ...state, loading: true, loadingAction: action.loadingAction, done: false };
+      return { 
+        ...state, loading: true, loadingAction: action.loadingAction, done: false 
+      };
     }
 
     case FINISHED: {
-      return { ...state, loading: false, loadingAction: "", done: true };
+      return { 
+        ...state, loading: false, loadingAction: '', done: true 
+      };
     }
 
     default: {

@@ -32,7 +32,7 @@ class Help extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const { message } = this.state;
-    const { submitEnquiry, authToken} = this.props;
+    const { submitEnquiry, authToken } = this.props;
     submitEnquiry(message, authToken);
   }
 

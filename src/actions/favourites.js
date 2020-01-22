@@ -26,15 +26,15 @@ export const fetchFavList = authToken => async (dispatch) => {
   request.data.forEach((favourite) => { favourites[favourite.show_id] = favourite.id; });
   dispatch(recieveFavList(favourites));
 };
-
+  
 export const favourite = (showId, authToken) => async (dispatch) => {
   await Axios.post(
     `${API_BASE_URL}/favourites`, { show_id: showId }, {
-      headers: {
-        Authorization: authToken,
-        'Content-Type': 'application/json',
-      },
+    headers: {
+      Authorization: authToken,
+      'Content-Type': 'application/json',
     },
+  },
   );
   dispatch(fetchFavList(authToken));
 };
@@ -52,7 +52,7 @@ export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
 };
 
 export const fetchFavourites = favList => (dispatch) => {
-  dispatch(loading('Loading your favourite shows'))
+  dispatch(loading('Loading your favourite shows'));
   const favourites = [];
   Object.keys(favList).forEach(async (key) => {
     const show = await fetch(`${TV_MAZE_URL}/shows/${key}`);

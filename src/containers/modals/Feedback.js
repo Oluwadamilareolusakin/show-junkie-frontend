@@ -11,7 +11,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   resetCreated: () => dispatch(resetCreated()),
-  submitSuggestion: (message, authToken ,userId) => dispatch(createSuggestion(message, authToken, userId)),
+  submitSuggestion: (message, authToken, userId) => dispatch(
+    createSuggestion(message, authToken, userId,)
+  ),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feedback);

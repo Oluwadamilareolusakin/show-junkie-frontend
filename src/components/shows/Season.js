@@ -41,7 +41,7 @@ Season.defaultProps = {
 
 Season.propTypes = {
   number: PropTypes.number,
-  season: PropTypes.arrayOf(PropTypes.oneOfType(Object)),
+  season: PropTypes.objectOf(Object),
 };
 
 export default Season;

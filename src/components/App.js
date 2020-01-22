@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import '../stylesheets/index.scss';  
+import '../stylesheets/index.scss';
 import SideBar from '../containers/navigations/SideBar';
 import NavBar from '../containers/navigations/NavBar';
 import SignupPage from './signup/SignupPage';

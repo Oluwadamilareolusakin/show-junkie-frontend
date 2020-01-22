@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes, { oneOfType } from 'prop-types';
+import PropTypes from 'prop-types';
 import ShowHeader from './ShowHeader';
 import ShowBody from './ShowBody';
 
@@ -30,7 +30,7 @@ Show.defaultProps = {
 };
 
 Show.propTypes = {
-  show: PropTypes.arrayOf(oneOfType(Object)),
+  show: PropTypes.objectOf(Object),
   fetchedShow: PropTypes.bool,
   fetchShow: PropTypes.func,
   showId: PropTypes.number,
