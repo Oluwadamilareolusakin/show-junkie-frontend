@@ -18,8 +18,8 @@ const Loading = (props) => {
   const { loadingAction, loading } = props;
   return (
     <FadeIn>
-      { loading && 
-        (
+      { loading
+        && (
           <div className="row loading-modal">
             <div className="row loading-items">
               <h1>
