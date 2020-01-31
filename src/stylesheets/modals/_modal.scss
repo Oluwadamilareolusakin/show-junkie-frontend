@@ -1,0 +1,65 @@
+@import '../components';
+
+.modal {
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 3;
+  background-color: $accent-purple-transparent;
+
+  .close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    color: white;
+    font-size: 2em;
+    transition: .5s;
+
+    &:hover {
+      color: $link-hover-grey;
+    }
+  }
+
+  form {
+    width: 80%;
+    @media #{$medium-mq} {
+      width: 70%;
+    }
+
+    @media #{$large-mq} {
+      width: 50%;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 1em 1em;
+      margin-bottom: 1em;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 1em ;
+      border: none;
+      border-radius: 5px;
+      background-color: $accent-green;
+      font-weight: 700;
+      color: white;
+      transition: .5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-green;
+      }
+    }
+  }
+}
+
+.open {
+  display: flex;
+}

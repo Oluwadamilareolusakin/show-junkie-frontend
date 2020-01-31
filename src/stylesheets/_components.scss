@@ -1,0 +1,51 @@
+@import './fontawesome/scss/fontawesome.scss';
+@import './fontawesome/scss/solid.scss';
+
+// Breakpoints --- Added 1px to each
+$xx-small-bp: 321px;
+$x-small-bp: 481px;
+$small-bp: 601px;
+$medium-bp: 769px;
+$large-bp: 901px;
+$x-large-bp: 1025px;
+$xx-large-bp: 1201px;
+
+// Media Queries
+$xx-small-mq: "(min-width: #{$xx-small-bp})";
+$x-small-mq: "(min-width: #{$x-small-bp})";
+$small-mq: "(min-width: #{$small-bp})";
+$medium-mq: "(min-width: #{$medium-bp})";
+$large-mq: "(min-width: #{$large-bp})";
+$x-large-mq: "(min-width: #{$x-large-bp})";
+$xx-large-mq: "(min-width: #{$xx-large-bp})";
+
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Montserrat:400,500,700&display=swap');
+$primary-font: 'Montserrat', sans-serif;
+$logo-font: 'Permanent Marker', cursive;
+$primary-font-weight: 400;
+$secondary-font-weight: 500;
+$aux-font-weight: 700;
+
+
+
+//Colors
+$primary-purple: #59499e;
+$accent-purple: #8589ef;
+$accent-purple-transparent: #8588efc4;
+$primary-blue: #35bee0;
+$primary-green: #5cba47;
+$accent-green: #18cebb;
+$accent-orange: #ffc611;
+$primary-orange: #dba800;
+$primary-pink: #ff6ea1;
+$primary-gradient-grey: linear-gradient(rgb(29, 29, 29), rgb(20, 20, 20), black);
+$secondary-gradient-grey: linear-gradient(rgb(0, 0, 0), rgb(20, 20, 20), black);
+$accent-gradient-purple: linear-gradient(#59499e,#8589ef, rgb(204, 138, 255));
+$accent-gradient-blue: linear-gradient(rgb(0, 202, 221), rgb(0, 183, 255), rgb(0, 140, 255));
+$link-hover-grey: grey;
+
+
+
+//Box Shadow
+$material-box-shadow: 0 0 5px .5px rgba(0, 0, 0, 0.353);

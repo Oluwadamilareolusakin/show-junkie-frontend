@@ -1,12 +1,49 @@
 import React from 'react';
+import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers';
+import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const saveToLocalStorage = (state) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('state', serializedState);
+  } catch (error) {
+    // handle errors
+  }
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const loadFromLocalStorage = () => {
+  try {
+    const state = localStorage.getItem('state');
+    if (state) {
+      const parsedState = JSON.parse(state);
+      return parsedState;
+    }
+    return undefined;
+  } catch (error) {
+    return undefined;
+  }
+};
+
+const persistedState = loadFromLocalStorage();
+
+const store = createStore(
+  rootReducer,
+  persistedState,
+  applyMiddleware(
+    thunk,
+  ),
+);
+
+const AppWrapper = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+store.subscribe(() => saveToLocalStorage(store.getState()));
+
+ReactDOM.render(<AppWrapper />, document.querySelector('#root'));

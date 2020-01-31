@@ -1,0 +1,83 @@
+@import './components';
+@import './modals/modal';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+}
+
+::-webkit-scrollbar {
+  background-color: white;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey;
+  width: 5px;
+}
+
+.accent-link {
+  color: $accent-green;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.logo {
+  font-family: $logo-font;
+}
+
+.no-bg-btn{
+  border: none;
+  background: 0 0;
+}
+
+
+.filter {
+  select {
+    border-radius: 5px;
+    border: none;
+  }
+}
+
+.close {
+  @extend %fa-icon;
+  @extend .fas;
+  cursor: pointer;
+
+
+  &:before {
+    content: fa-content($fa-var-times);
+  }
+}
+
+.mobile-menu {
+  @extend %fa-icon;
+  @extend .fas;
+
+  &:before {
+    content: fa-content($fa-var-bars );
+  }
+}
+
+.show-list-header {
+  width: 100%;
+  h2 {
+    font-size: 1em;
+  }
+
+  
+  select {
+    width: 30%;
+  }
+}
+
