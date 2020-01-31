@@ -1,0 +1,72 @@
+@import '../components';
+
+.episode {
+  width: 100%;
+  background: $primary-gradient-grey;
+  border-radius: 5px;
+  color: white;
+  margin: 1em 0;
+  
+  @media #{$large-mq} {
+    margin: .5em;
+    width: 48%;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    transition: .5s;
+    
+    &:hover {
+      color: $link-hover-grey; 
+    }
+  }
+
+  .name {
+    font-size: 1em;
+    padding: 1em 0 0 1em;
+  }
+  
+  .existence-details {
+    margin: .5em 0;
+    padding: .5em 1em;
+    align-items: center;
+
+    .season-number {
+      margin-right: 1em;
+      background-color: $accent-purple;
+    }
+
+    .season-number, .episode-number {
+      border-radius: 5px;
+      padding: .5em;
+    }
+
+    .episode-number {
+      margin: 0;
+      background-color: $accent-green;
+    }
+  }
+
+  .timing {
+    background-color: $accent-green;
+    color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: .5em;
+    font-size: .7em;
+     
+    @media #{$large-mq} {
+      padding: 1em;
+      margin: 1em 0;
+    }
+
+    p{
+      margin-right: .5em;
+      
+      @media #{$large-mq} {
+        margin-right: 1em;
+      }
+    }
+  }
+}

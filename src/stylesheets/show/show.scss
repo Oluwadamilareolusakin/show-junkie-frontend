@@ -1,0 +1,12 @@
+@import '../components';
+@import './show_card';
+
+div.shows {
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.show-list-header {
+  justify-content: space-between;
+  padding: 1em;
+}

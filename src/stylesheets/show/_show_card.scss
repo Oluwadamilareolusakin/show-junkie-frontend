@@ -1,0 +1,86 @@
+@import '../components';
+
+.show-card {
+  width: 100%;
+  padding: 0 1em;
+  margin: 1em 0;
+
+  @media #{$small-mq} {
+    width: 50%;
+  }
+
+  @media #{$medium-mq} {
+    width: 33%;
+  }
+
+  .show-image {
+    width: 100%;
+  
+    img {
+      width: 100%;
+      border-radius: 5px;
+
+      @media #{$small-mq} {
+        height: 450px;
+      }
+    }
+  }
+
+  .blank-image {
+    height: 650px;
+    background-image: $accent-gradient-blue;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    @media #{$small-mq} {
+      height: 450px;
+    }
+  }
+
+  .show-details {
+    .row {
+      align-items: center;
+      font-size: .7em;
+    }
+
+    .name-rating{
+      align-items: center;
+      justify-content: space-between;
+
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      
+      .poor-rating{
+        color: rgb(255, 52, 52);
+      }
+
+      .good-rating{
+        margin-left: .5em;
+        color: $accent-green;
+      }
+    }
+
+    .genres {
+      margin: .4em 0;
+      align-items: center;
+
+      .runtime, .genre {
+        border-radius: 5px;
+        margin-right: .3em;
+        padding: .3em;
+        color: white;
+      }
+      
+      .runtime {
+        background-color: $primary-pink;
+      }
+      .genre {
+        background-color: $accent-purple;
+      }
+    }
+  }
+}
+

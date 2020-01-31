@@ -1,0 +1,12 @@
+@import '../components';
+
+div.episodes {
+  flex-flow: column nowrap;
+  width: 100%;
+  padding: 1em;
+  
+  @media #{$medium-mq} {
+    padding: 4em;
+    flex-flow: row wrap;
+  }
+}
