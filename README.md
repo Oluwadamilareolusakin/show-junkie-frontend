@@ -1,5 +1,6 @@
 # Show Junkie
-Twitter for movies
+
+Twitter for TV Shows
 
 # What it does
 It is the Frontend for Show Junkie, a web app that allows users browse their favourite TV Shows, share comments about shows, rate shows and follow people who they share similar interests with. 
