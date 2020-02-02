@@ -40,7 +40,7 @@ export const favourite = (showId, authToken) => async (dispatch) => {
   dispatch(fetchFavList(authToken));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
@@ -56,7 +56,7 @@ export const unfavourite = (favouriteId, authToken) => async (dispatch) => {
   dispatch(fetchFavList(authToken));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 export const fetchFavourites = favList => (dispatch) => {
@@ -70,5 +70,5 @@ export const fetchFavourites = favList => (dispatch) => {
   dispatch(recieveFavourites(favourites));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };

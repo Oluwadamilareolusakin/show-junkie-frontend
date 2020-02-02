@@ -19,7 +19,7 @@ export const createSuggestion = (message, authToken) => async (dispatch) => {
       });
     setTimeout(() => {
       dispatch(finished());
-    }, 2000);
+    }, 1000);
     postRequest.then(dispatch(create()));
   } catch (error) {
     // handle errors

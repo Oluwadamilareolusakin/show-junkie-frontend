@@ -31,7 +31,7 @@ export const getShows = (country, date) => async (dispatch) => {
     const response = await shows.json();
     setTimeout(() => {
       dispatch(finished());
-    }, 2000);
+    }, 1000);
     dispatch(recieveShows(response));
   } catch (error) {
     // handle errors
@@ -54,7 +54,7 @@ export const fetchSeasons = id => async (dispatch) => {
   const seasons = await seasonsData.json();
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
   dispatch(recieveSeasons(seasons));
 };
 
@@ -65,7 +65,7 @@ export const fetchEpisodes = id => async (dispatch) => {
   dispatch(recieveEpisodes(episodes));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 export const getShow = showId => async (dispatch) => {
@@ -75,7 +75,7 @@ export const getShow = showId => async (dispatch) => {
     const data = await show.json();
     setTimeout(() => {
       dispatch(finished());
-    }, 2000);
+    }, 1000);
     dispatch(recieveShow(data));
   } catch (error) {
     // handle errors

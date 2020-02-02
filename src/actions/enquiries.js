@@ -20,13 +20,13 @@ export const createEnquiry = (message, authToken) => async (dispatch) => {
     postRequest.then(dispatch(create()));
     setTimeout(() => {
       dispatch(finished());
-    }, 2000);
+    }, 1000);
   } catch (error) {
     // handle Errors
   }
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 const recieveEnquiries = enquiries => ({

@@ -21,7 +21,7 @@ export const login = formData => async (dispatch) => {
   dispatch(receiveAuthToken(authToken, user));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 export const signup = formData => async (dispatch) => {
@@ -32,7 +32,7 @@ export const signup = formData => async (dispatch) => {
   dispatch(receiveAuthToken(authToken, user));
   setTimeout(() => {
     dispatch(finished());
-  }, 2000);
+  }, 1000);
 };
 
 
