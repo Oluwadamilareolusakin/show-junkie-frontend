@@ -36,6 +36,14 @@ Contributions, issues and feature requests are welcome! Start by:
 * Push your branch up to your forked repository
 * Open a Pull Request with a detailed description to the development branch of the original project for a review
 
+## Pending and proposed features
+* Form validation errors
+* Chatroom for each TV Show
+* Profile page with stats
+* Ability to follow people and see updates about shows they watch
+
+##### Please feel free to contribute to any of these!
+
 Feel free to check the [issues page](https://github.com/Oluwadamilareolusakin/movie-junkie-api/issues).
 
 ## Attributions and Credit
