@@ -16,6 +16,9 @@ It is the Frontend for Show Junkie, a web app that allows users browse their fav
 
 [Live Demo](https://moviejunkie.herokuapp.com)
 
+## My API
+[Showjunkie's API](https://github.com/Oluwadamilareolusakin/show-junkie-api)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
