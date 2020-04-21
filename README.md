@@ -60,6 +60,7 @@ Give a ⭐️ if you like this project!
 
 This project is [MiT](lic.url) licensed.
 
+[Contact me](maito:oluwadamilare@oluwadamilareolusakin.com) for enquiries/help with projects.
 
 Check out my stories on [medium](https://medium.com/@oluwadamilareo_) to see what I'm talking about!
 Follow me on [Instagram](https://instagram.com/oluwadamilare_olusakin) and [Twitter](https://twitter.com/oluwadamilareo_) to see what I am up to!
